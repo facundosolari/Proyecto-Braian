@@ -1,0 +1,74 @@
+/* --- RESETEO GLOBAL --- */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html, body, #root {
+  height: 100%;
+  min-height: 100%;
+}
+
+body {
+  font-family: Inter, Arial, sans-serif;
+  background: #f7f7f8;
+  color: #222;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Layout general */
+.app-wrapper {
+  display: flex;
+  flex-direction: column;
+  min-height: 100%;
+  flex: 1;
+}
+
+main {
+  flex: 1;
+}
+
+/* ---- EVITAR SCROLL EN TODA LA PÁGINA ---- */
+html, body {
+  height: 100%;
+  overflow: auto;
+}
+.site-header {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  backdrop-filter: blur(12px);
+  background: rgba(255, 255, 255, 0.7);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.3);
+  z-index: 999;
+}
+
+/* ---- BOX DEL CATÁLOGO ---- */
+.catalog-wrapper {
+  height: calc(100vh - 200px); /* ajustable si querés */
+  padding: 15px;
+  display: flex;
+  flex-direction: column;
+}
+
+.catalog-title {
+  margin-bottom: 10px;
+  padding-left: 5px;
+}
+
+.catalog-box {
+  flex: 1;
+  overflow-y: auto;
+  padding-right: 5px;
+}
+
+.catalog-box::-webkit-scrollbar {
+  width: 8px;
+}
+
+.catalog-box::-webkit-scrollbar-thumb {
+  background: #ccc;
+  border-radius: 4px;
+}

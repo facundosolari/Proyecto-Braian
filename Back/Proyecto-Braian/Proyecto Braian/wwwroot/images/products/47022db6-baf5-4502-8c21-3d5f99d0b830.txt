@@ -1,0 +1,16 @@
+kinesiologos:
+id 2  - Kinesiologo2
+
+pacientes:
+id 8 - Paciente8 
+Tratamiento id 10
+
+superadmin:
+
+id 1 - Admin1
+
+dias:
+
+id 31 - 30/7
+id 32 - 31/7
+id 33 - 1/8

@@ -1,0 +1,106 @@
+/* Contenedor de cada buscador */
+.search-card {
+  position: relative; /* importante para posicionar el panel relativo al input */
+  margin-bottom: 16px;
+  background: #f9f9f9;
+  padding: 12px 16px;
+  border-radius: 12px;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+  width: 100%; /* ocupa todo el ancho disponible */
+  max-width: 700px; /* ancho máximo de la card */
+}
+
+/* Inputs y botones */
+.search-card input {
+  width: 100%;
+  padding: 10px 12px;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+  font-size: 1rem;
+}
+
+.search-buttons {
+  margin-top: 8px;
+  display: flex;
+  gap: 8px;
+}
+
+/* Botones */
+.btn {
+  padding: 8px 14px;
+  border-radius: 8px;
+  border: none;
+  cursor: pointer;
+  background: #007bff;
+  color: #fff;
+  font-weight: 500;
+  transition: background 0.2s ease;
+}
+
+.btn:hover {
+  background: #0056b3;
+}
+
+/* Panel flotante de resultados debajo del input, ensanchado hacia la izquierda */
+.search-result-panel {
+  position: absolute; 
+  top: 100%; /* justo debajo del contenido del card */
+  right: 0; /* alineado al borde derecho */
+  width: 750px; /* ancho controlado */
+  max-width: calc(100vw - 20px); /* no se salga de la pantalla */
+  max-height: 500px;
+  overflow-y: auto;
+  background: #fff;
+  border-radius: 12px;
+  box-shadow: 0 6px 25px rgba(0,0,0,0.25);
+  padding: 20px;
+  z-index: 50;
+  animation: slide-down 0.25s ease-out forwards;
+  /* para que el panel aparezca encima del resto */
+}
+
+/* Overlay para cerrar al clic fuera (opcional) */
+.search-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  z-index: 40;
+  background: rgba(0,0,0,0.1);
+}
+
+/* Animación del panel */
+@keyframes slide-down {
+  from { transform: translateY(-10px); opacity: 0; }
+  to { transform: translateY(0); opacity: 1; }
+}
+
+/* Botón cerrar dentro del panel, superpuesto */
+.search-result-panel .close-btn {
+  position: absolute; /* superpuesto */
+  top: 12px;
+  right: 12px;
+  background: #e0e0e0;
+  border: none;
+  padding: 6px 12px;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background 0.2s ease;
+  z-index: 60; /* encima de todo */
+}
+
+.search-result-panel .close-btn:hover {
+  background: #c0c0c0;
+}
+
+/* Estilos internos del panel */
+.search-result-panel p {
+  margin: 6px 0;
+  font-size: 0.95rem;
+}
+
+.search-result-panel h4, 
+.search-result-panel h5 {
+  margin: 8px 0;
+}

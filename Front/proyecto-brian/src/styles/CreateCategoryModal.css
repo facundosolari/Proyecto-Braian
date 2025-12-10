@@ -1,0 +1,126 @@
+/* === OVERLAY === */
+.modal-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.6);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 2000;
+}
+
+/* === MODAL === */
+.modal {
+  background: #fff;
+  padding: 25px;
+  border-radius: 12px;
+  width: 95%;
+  max-width: 520px;
+  box-shadow: 0 0 15px rgba(0,0,0,0.3);
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+/* === TITULO === */
+.modal h2 {
+  margin: 0;
+  font-size: 22px;
+  text-align: center;
+}
+
+/* === INPUTS Y SELECT NORMALES === */
+.modal input,
+.modal select {
+  width: 100%;
+  padding: 10px;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+  font-size: 16px;
+  box-sizing: border-box;
+}
+
+/* === BUSCADOR === */
+.search-box {
+  position: relative;
+}
+
+.search-input {
+  width: 100%;
+}
+
+.search-results {
+  position: absolute;
+  top: 45px;
+  left: 0;
+  right: 0;
+  background: #fff;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  max-height: 200px;
+  overflow-y: auto;
+  z-index: 3000;
+}
+
+.search-option {
+  padding: 10px;
+  cursor: pointer;
+}
+
+.search-option:hover {
+  background: #eee;
+}
+
+/* === PRODUCTOS SELECCIONADOS === */
+.product-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.product-item {
+  background: #f2f2f2;
+  padding: 8px 12px;
+  border-radius: 8px;
+  font-size: 14px;
+  position: relative;
+}
+
+.photo-remove-btn {
+  margin-left: 8px;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+/* === BOTONES === */
+.modal-buttons {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 10px;
+}
+
+.save-btn {
+  background: #28a745;
+  color: white;
+  padding: 10px 18px;
+  border-radius: 6px;
+  border: none;
+  cursor: pointer;
+}
+
+.cancel-btn {
+  background: #dc3545;
+  color: white;
+  padding: 10px 18px;
+  border-radius: 6px;
+  border: none;
+  cursor: pointer;
+}
+
+.save-btn:hover {
+  background: #218838;
+}
+
+.cancel-btn:hover {
+  background: #c82333;
+}

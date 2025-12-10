@@ -1,0 +1,56 @@
+Checklist para retomar el proyecto
+1. Login / Register Slide
+
+ Que el slide se abra y cierre correctamente.
+
+ Que al loguearse se cierre automáticamente el slide.
+
+ Que al registrarse se cierre automáticamente el slide y se loguee el usuario.
+
+ Evitar que el slide se abra solo si hay algún cambio de estado (bug actual al limpiar el carrito).
+
+2. Carrito
+
+ Que el botón “Ver Carrito” abra un slide lateral.
+
+ Que el slide no se cierre automáticamente al vaciar el carrito.
+
+ Que se muestre correctamente el número de productos (0 si está vacío).
+
+ Que se pueda eliminar productos sin errores.
+
+ Que el slide se comporte correctamente si se agregan productos nuevos después de vaciarlo.
+
+3. Agregar Producto (Admin)
+
+ Que se haga en un slide similar al login/register.
+
+ Que al guardar se actualice la lista de productos correctamente.
+
+ Que el slide se cierre al guardar el producto.
+
+4. Detalle de Producto
+
+ Que al hacer click en una card, se abra un slide con el detalle.
+
+ Mostrar varias fotos y permitir navegar entre ellas.
+
+ Mostrar nombre, descripción, precio y botón para agregar al carrito.
+
+5. Lista de Productos
+
+ Que la lista tenga scroll vertical si hay muchos productos.
+
+ Que no se estire toda la página, mantener un contenedor con altura fija y scroll.
+
+6. CSS / UI
+
+ Aplicar el estilo que definiste (el último que compartiste) a todos los slides y cards.
+
+ Revisar responsive en todos los slides y la lista de productos.
+
+7. Estado General
+
+ Evitar efectos colaterales al cambiar estados (cart, user, slides abiertos/cerrados).
+
+ Revisar que todos los slides puedan abrirse y cerrarse sin interferir con otros.

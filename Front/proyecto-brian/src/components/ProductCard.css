@@ -1,0 +1,219 @@
+/* ==== PRODUCT CARD ==== */
+.product-card {
+  background: #fff;
+  border-radius: 12px;
+  padding: 18px;
+  box-shadow: 0 3px 12px rgba(0,0,0,0.08);
+  text-align: center;
+  transition: 0.25s ease;
+  overflow: hidden;
+  width: 100%;
+  max-width: 300px;
+}
+
+.product-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 6px 20px rgba(0,0,0,0.12);
+}
+
+/* ==== IMAGEN Y SLIDER ==== */
+.product-img-wrapper {
+  position: relative;
+  width: 100%;
+  height: 200px;
+  border-radius: 10px;
+  overflow: hidden;
+  margin-bottom: 12px;
+}
+
+.product-img-wrapper img,
+.product-img-wrapper .placeholder {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.placeholder {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #eee;
+  color: #666;
+}
+
+/* OVERLAY PRODUCTO DESHABILITADO */
+.overlay-disabled {
+  position: absolute;
+  inset: 0;
+  background: rgba(0,0,0,0.4);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #fff;
+  font-weight: 600;
+  text-transform: uppercase;
+}
+
+/* ==== SLIDER BOTONES ==== */
+.slider-container {
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+
+.slider-btn {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: rgba(0,0,0,0.3);
+  color: #fff;
+  border: none;
+  font-size: 1.2rem;
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  opacity: 0;
+  transition: opacity 0.2s ease, background 0.2s ease;
+  z-index: 10;
+}
+
+.slider-btn.left { left: 5px; }
+.slider-btn.right { right: 5px; }
+
+.slider-container:hover .slider-btn {
+  opacity: 1;
+}
+
+.slider-btn:hover {
+  background: rgba(0,0,0,0.6);
+}
+
+/* ==== NOMBRE Y PRECIO ==== */
+.product-title {
+  margin: 10px 0 4px;
+  font-size: 1.1rem;
+  color: #333;
+}
+
+.product-price {
+  font-size: 1rem;
+  margin-bottom: 10px;
+  color: #333;
+}
+
+/* ==== BOTONES ==== */
+button {
+  padding: 10px;
+  font-size: 1rem;
+  border-radius: 6px;
+  border: none;
+  width: 100%;
+  cursor: pointer;
+}
+
+.btn-enable { background: #28a745; color: #fff; }
+.btn-disable { background: #d9534f; color: #fff; }
+.add-btn { background: #2e7dff; color: #fff; }
+.add-btn:hover { background: #1a5fd3; }
+
+/* ==== SELECT TALLE ==== */
+.product-card select {
+  width: 100%;
+  padding: 8px;
+  margin-bottom: 10px;
+  border-radius: 6px;
+  border: 1px solid #ddd;
+}
+
+/* ==== ESTADOS ==== */
+.disabled-product { opacity: 0.65; }
+.disabled-label { font-size: 0.9rem; color: #888; margin-top: 6px; }
+
+/* ==== USUARIO / ADMIN ==== */
+.user-actions .card-bottom {
+  display: flex;
+  gap: 10px;
+  margin-top: 10px;
+}
+
+.size-selector { flex: 1; }
+
+.detail-button {
+  flex: 1;
+  text-align: right;
+}
+
+.detail-button button {
+  padding: 6px 12px;
+  background-color: #007bff;
+  color: #fff;
+  border-radius: 6px;
+  cursor: pointer;
+  width: 100%;
+}
+
+.detail-button button:hover {
+  background-color: #0056b3;
+}
+
+/* ==== GRID ==== */
+.product-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 24px;
+  justify-items: center;
+  width: 100%;
+  padding: 20px;
+}
+
+@media (max-width: 600px) {
+  .product-grid { grid-template-columns: 1fr; }
+}
+
+/* MENSAJE DE USUARIO */
+.no-user-msg {
+  text-align: center;
+  width: 100%;
+  margin-top: 20px;
+  font-size: 1rem;
+  opacity: 0.8;
+}
+
+
+/* ==== USUARIO / ADMIN ==== */
+.user-actions .add-btn {
+  margin-top: 12px; /* separa un poco el botón de los elementos de arriba */
+}
+
+/* --- DROPDOWN TALLE --- */
+.size-select {
+  width: 100%;
+  padding: 10px 14px;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+  font-size: 15px;
+  background-color: #fff;
+  appearance: none; /* Quita el estilo nativo del navegador */
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  background-image: url("data:image/svg+xml;charset=US-ASCII,<svg xmlns='http://www.w3.org/2000/svg' width='10' height='6'><path fill='%233c4cd8' d='M0 0l5 6 5-6z'/></svg>");
+  background-repeat: no-repeat;
+  background-position: right 12px center;
+  background-size: 10px 6px;
+  cursor: pointer;
+  transition: 0.2s;
+}
+
+.size-select:hover {
+  border-color: #888;
+}
+
+.size-select:focus {
+  outline: none;
+  border-color: #4a5df0;
+  box-shadow: 0 2px 8px rgba(74, 93, 240, 0.25);
+}

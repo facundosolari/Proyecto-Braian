@@ -1,0 +1,6 @@
+@Proyecto_Braian_HostAddress = http://localhost:5216
+
+GET {{Proyecto_Braian_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###

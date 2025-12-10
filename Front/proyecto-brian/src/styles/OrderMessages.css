@@ -1,0 +1,125 @@
+.order-messages-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0,0,0,0.2);
+  z-index: 10;
+}
+
+/* Contenedor flotante relativo a la orden */
+.order-messages-panel {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 380px;
+  max-width: 100%;
+  height: 100%;
+  z-index: 20;
+  pointer-events: all;
+  display: flex;
+  flex-direction: column;
+  transform: translateX(100%);
+  border-radius: 12px 0 0 12px;
+  box-shadow: -3px 0 12px rgba(0,0,0,0.25);
+  background: #fff;
+  overflow: hidden;
+  transition: transform 0.3s ease;
+}
+
+.order-messages-panel.open {
+  transform: translateX(0);
+}
+
+/* Header */
+.drawer-header {
+  display: flex;
+  justify-content: flex-start; /* título a la izquierda */
+  align-items: center;
+  padding: 12px 16px;
+  border-bottom: 1px solid #ddd;
+  background: #f7f7f7;
+}
+
+/* Título dentro del header */
+.drawer-header h4 {
+  margin: 0;
+  font-size: 1rem;
+  font-weight: 500;
+}
+/* Botón cerrar alineado a la derecha con fondo visible siempre */
+.close-btn {
+  background: #3588b8 !important; /* fondo visible por defecto */
+  border: none;
+  font-size: 1.2rem;
+  cursor: pointer;
+  border-radius: 6px;
+  padding: 4px 8px;
+  margin-left: auto; /* empuja el botón a la derecha */
+  margin-top: 0 !important; /* opcional, asegura que quede alineado verticalmente */
+}
+
+.close-btn:hover {
+  background: #c0c0c0; /* cambia color al pasar el mouse */
+}
+
+/* Contenido de mensajes */
+.drawer-content {
+  flex: 1;
+  overflow-y: auto;
+  padding: 12px 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+/* Mensajes */
+.message-item {
+  padding: 10px 14px;
+  border-radius: 12px;
+  max-width: 75%;
+  word-wrap: break-word;
+  display: inline-block;
+  font-size: 0.95rem;
+  line-height: 1.3;
+}
+
+.message-item.sent { background: #d1e7dd; margin-left: auto; text-align: right; }
+.message-item.received { background: #f8d7da; margin-right: auto; text-align: left; }
+
+.message-item.unread.sent { border: 2px solid #0f5132; font-weight: bold; }
+.message-item.read.sent { border: 1px solid #198754; font-weight: normal; }
+.message-item.unread.received { border: 2px solid #842029; font-weight: bold; }
+.message-item.read.received { border: 1px solid #dc3545; font-weight: normal; }
+
+.message-item small { display: block; font-size: 0.7rem; color: #555; margin-top: 4px; }
+
+/* Footer input y botón */
+.drawer-footer {
+  display: flex;
+  gap: 8px;
+  padding: 12px 16px;
+  border-top: 1px solid #ddd;
+  background: #f7f7f7;
+}
+
+.drawer-footer input {
+  flex: 1;
+  padding: 10px 12px;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+}
+
+.drawer-footer .btn.send {
+  padding: 10px 16px;
+  border-radius: 8px;
+  border: none;
+  background: #007bff;
+  color: #fff;
+  cursor: pointer;
+  font-weight: 500;
+  transition: background 0.2s ease;
+}
+
+.drawer-footer .btn.send:hover { background: #0056b3; }

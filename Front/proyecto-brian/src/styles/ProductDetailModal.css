@@ -1,0 +1,219 @@
+/* --- OVERLAY --- */
+.modal-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.7);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+/* --- MODAL CONTENT --- */
+.modal-content {
+  background: #fff;
+  border-radius: 12px;
+  width: 98%;
+  max-width: 1400px;
+  height: 95vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  padding: 30px;
+  position: relative;
+  gap: 30px;
+  overflow-y: auto;
+  box-shadow: 0 10px 40px rgba(0,0,0,0.5);
+}
+
+/* --- BOTÓN CERRAR --- */
+.close-btn {
+  position: absolute;
+  top: 15px;
+  right: 20px;
+  background: none;
+  border: none;
+  font-size: 3rem;
+  cursor: pointer;
+  color: #333;
+}
+
+/* --- SECCIÓN IZQUIERDA (IMAGEN) --- */
+.modal-left {
+  flex: 1 1 55%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative; /* para posicionar flechas */
+}
+
+.modal-left img {
+  width: 100%;
+  max-width: 700px;
+  height: auto;
+  object-fit: cover;
+  border-radius: 10px;
+}
+
+/* --- FLECHAS DEL SLIDER --- */
+.photo-nav {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 2rem;
+  background: rgba(0,0,0,0.4);
+  color: #fff;
+  border: none;
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: background 0.2s;
+}
+
+.photo-nav:hover {
+  background: rgba(0,0,0,0.7);
+}
+
+.photo-prev {
+  left: 7px;
+}
+
+.photo-next {
+  right: 7px;
+}
+
+/* --- SECCIÓN DERECHA (DETALLES) --- */
+.modal-right {
+  flex: 1 1 45%;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+/* --- PRECIO --- */
+.modal-price {
+  font-size: 2.5rem;
+  color: #e74c3c;
+  margin: 5px 0;
+  font-weight: bold;
+}
+
+/* --- SELECT / OPCIONES --- */
+.modal-select {
+  padding: 14px;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+  font-size: 1.2rem;
+  margin-top: 10px;
+}
+
+/* --- BOTÓN AÑADIR --- */
+.modal-add-btn {
+  margin-top: 20px;
+  padding: 16px;
+  font-size: 1.2rem;
+  border: none;
+  border-radius: 6px;
+  background-color: #2e7dff;
+  color: #fff;
+  cursor: pointer;
+  transition: 0.2s;
+}
+
+.modal-add-btn:hover {
+  background-color: #1a5fd3;
+}
+
+/* --- MEDIA QUERIES (RESPONSIVE) --- */
+@media (max-width: 1200px) {
+  .modal-left {
+    flex: 1 1 60%;
+  }
+  .modal-right {
+    flex: 1 1 40%;
+  }
+}
+
+@media (max-width: 900px) {
+  .modal-content {
+    flex-direction: column;
+    height: auto;
+    width: 95%;
+    padding: 20px;
+  }
+  .modal-left, .modal-right {
+    flex: 1 1 100%;
+  }
+  .modal-left img {
+    max-width: 100%;
+  }
+  .modal-price {
+    font-size: 2rem;
+  }
+  .modal-add-btn, .modal-select {
+    font-size: 1rem;
+  }
+}
+
+.close-btn-top {
+  position: absolute;
+  right: 10px;       /* ajusta la posición al borde del modal */
+  top: 10px;
+  font-size: 26px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  z-index: 10;
+  width: auto;       /* que ocupe solo lo que necesita */
+  height: auto;      /* opcional, que no se expanda en altura */
+  padding: 0;        /* elimina padding extra */
+  line-height: 1;    /* opcional, ajusta altura de línea */
+}
+
+/* --- CONTENEDOR DE PRODUCTOS RELACIONADOS --- */
+.related-slider-container {
+  width: 100%;           /* ocupa todo el ancho del modal */
+  padding: 10px 0;
+  margin-top: 20px;      /* separación del slider respecto a la foto */
+  overflow-x: auto;
+}
+
+.related-title {
+  margin-left: 10px;
+  font-size: 18px;
+  margin-bottom: 8px;
+}
+
+.related-slider {
+  display: flex;
+  gap: 12px;
+  padding: 5px 10px;
+  overflow-x: auto;
+}
+
+.related-card {
+  min-width: 200px;      
+  max-width: 200px;
+  background: #f7f7f7;
+  border-radius: 8px;
+  padding: 8px;
+  text-align: center;
+  cursor: pointer;
+  font-size: 0.9rem;
+}
+
+.related-card img {
+  width: 100%;
+  height: 120px;         
+  object-fit: cover;
+  border-radius: 6px;
+}
+
+.modal-body {
+  display: flex;
+  gap: 20px;
+}
