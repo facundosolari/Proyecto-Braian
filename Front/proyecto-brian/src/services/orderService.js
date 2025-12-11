@@ -26,16 +26,6 @@ export const getAllOrders = async () => {
   }
 };
 
-// Órdenes del usuario logueado
-export const getOrdersByUser = async () => {
-  try {
-    const response = await axiosClient.get("/Order/OrdersByUserId");
-    return response.data;
-  } catch (error) {
-    console.error("Error al obtener órdenes del usuario:", error);
-    throw error;
-  }
-};
 
 // Obtener orden por ID
 export const getOrderById = async (orderId) => {
@@ -359,26 +349,39 @@ export const softDeleteCategory = async (categoryId) => {
   }
 };
 
-export const getOrdersByUserPaginated = async (
+
+export const getOrdersByUserId = async ({
   page = 1,
   pageSize = 10,
-  tieneMensajesNoLeidos = null
-) => {
+  estado = null,
+  tieneMensajesNoLeidos = null,
+  fechaDesde = null,
+  fechaHasta = null,
+  sortBy = "FechaHora",
+  sortOrder = "desc"
+}) => {
   try {
-    const response = await axiosClient.get(`/Order/UserOrders`, {
-      params: { 
-        page, 
-        pageSize,
-        tieneMensajesNoLeidos   // 👈 MÁGIA
-      }
-    });
+    // Construimos los params de query
+    const params = { page, pageSize, sortBy, sortOrder };
 
-    return response.data; // { orders, totalCount }
+    if (estado !== null) params.estado = estado;
+    if (tieneMensajesNoLeidos !== null) params.tieneMensajesNoLeidos = tieneMensajesNoLeidos;
+    if (fechaDesde) params.fechaDesde = new Date(fechaDesde).toISOString();
+    if (fechaHasta) {
+      const hasta = new Date(fechaHasta);
+      hasta.setHours(23, 59, 59, 999);
+      params.fechaHasta = hasta.toISOString();
+    }
+
+    // 🔹 Usamos axiosClient en lugar de axios
+    const { data } = await axiosClient.get("/Order/OrdersByUserId", { params });
+    return data;
   } catch (error) {
-    console.error("Error al obtener órdenes paginadas:", error);
+    console.error("Error al obtener órdenes por usuario:", error);
     throw error;
   }
 };
+
 export const getOrdersByEstado = async ({
   estadoPedido,
   page = 1,

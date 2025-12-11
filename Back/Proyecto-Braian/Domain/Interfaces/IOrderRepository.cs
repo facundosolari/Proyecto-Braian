@@ -18,7 +18,13 @@ namespace Domain.Interfaces
     int userId,
     int page,
     int pageSize,
-    bool? tieneMensajesNoLeidos = null);
+    bool? tieneMensajesNoLeidos = null,
+    EstadoPedido? estado = null,
+    bool esAdmin = false,
+    DateTime? fechaDesde = null,
+    DateTime? fechaHasta = null,
+    string sortBy = "FechaHora",
+    string sortOrder = "desc");
         (List<Order> Orders, int TotalCount) GetOrdersByEstadoPaginated(
             EstadoPedido estadoPedido,
             int page,

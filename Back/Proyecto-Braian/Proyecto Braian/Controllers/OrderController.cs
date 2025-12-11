@@ -31,7 +31,16 @@ namespace Proyecto_Braian.Controllers
 
         [HttpGet("OrdersByUserId")]
         [Authorize(Policy = "UserOrAdmin")]
-        public IActionResult GetOrdersByUserId()
+        public IActionResult GetOrdersByUserId(
+            int page = 1,
+            int pageSize = 20,
+            bool? tieneMensajesNoLeidos = null,
+            int? estado = null,
+            DateTime? fechaDesde = null,
+            DateTime? fechaHasta = null,
+            string sortBy = "FechaHora",
+            string sortOrder = "desc"
+        )
         {
             // Obtener el Id del usuario desde el token
             var userIdClaim = User.Claims.FirstOrDefault(c => c.Type == "Id")?.Value;
@@ -41,9 +50,30 @@ namespace Proyecto_Braian.Controllers
 
             int userId = int.Parse(userIdClaim);
 
-            var orders = _OrderService.GetOrdersByUserId(userId);
+            // Saber si es admin
+            bool esAdmin = User.IsInRole("Admin");
 
-            return Ok(orders);
+            var (orders, totalCount) = _OrderService.GetOrdersByUserIdPaginated(
+                userId,
+                page,
+                pageSize,
+                tieneMensajesNoLeidos,
+                estado,
+                esAdmin,
+                fechaDesde,
+                fechaHasta,
+                sortBy,
+                sortOrder
+            );
+
+            return Ok(new
+            {
+                Orders = orders,
+                TotalCount = totalCount,
+                Page = page,
+                PageSize = pageSize,
+                TotalPages = (int)Math.Ceiling((double)totalCount / pageSize)
+            });
         }
 
         [HttpGet("OrderId/{id}")]
@@ -53,61 +83,8 @@ namespace Proyecto_Braian.Controllers
             var Order = _OrderService.GetOrderById(id);
             return Ok(Order);
         }
-        [HttpGet("UserOrders")]
-        [Authorize(Policy = "UserOrAdmin")]
-        public IActionResult GetOrdersByUser(
-    int page = 1,
-    int pageSize = 10,
-    bool? tieneMensajesNoLeidos = null  // 👈 NUEVO
-)
-        {
-            var userIdClaim = User.Claims.FirstOrDefault(c => c.Type == "Id")?.Value;
 
-            if (userIdClaim == null)
-                return Unauthorized("Token inválido");
 
-            int userId = int.Parse(userIdClaim);
-
-            var (orders, totalCount) = _OrderService.GetOrdersByUserIdPaginated(
-                userId, page, pageSize, tieneMensajesNoLeidos
-            );
-
-            return Ok(new
-            {
-                orders,
-                totalCount
-            });
-        }
-        /*
-        [HttpGet("byEstado")]
-        [Authorize(Policy = "Admin")]
-        public IActionResult GetOrdersByEstado(
-            [FromQuery] int estadoPedido,
-            [FromQuery] int page = 1,
-            [FromQuery] int pageSize = 20)
-        {
-            try
-            {
-                // Castear int a enum
-                var estadoEnum = (EstadoPedido)estadoPedido;
-
-                var (orders, totalCount) = _OrderService.GetOrdersByEstadoPaginated(estadoEnum, page, pageSize);
-
-                return Ok(new
-                {
-                    Orders = orders,
-                    TotalCount = totalCount,
-                    Page = page,
-                    PageSize = pageSize,
-                    TotalPages = (int)Math.Ceiling((double)totalCount / pageSize)
-                });
-            }
-            catch (Exception ex)
-            {
-                return StatusCode(500, new { Message = ex.Message });
-            }
-        }
-        */
 
         [HttpGet("byEstado")]
         [Authorize(Policy = "Admin")]
@@ -127,7 +104,7 @@ namespace Proyecto_Braian.Controllers
                 var estadoEnum = (EstadoPedido)estadoPedido;
 
                 var (orders, totalCount) = _OrderService.GetOrdersByEstadoPaginated(
-                    estadoEnum, page, pageSize, fechaDesde, fechaHasta,tieneMensajesNoLeidos, esAdmin, sortBy, sortOrder
+                    estadoEnum, page, pageSize, fechaDesde, fechaHasta, tieneMensajesNoLeidos, esAdmin, sortBy, sortOrder
                 );
 
                 return Ok(new
@@ -160,24 +137,6 @@ namespace Proyecto_Braian.Controllers
             }
             return Ok($"Order creado con exito");
         }
-        /*
-
-        [HttpPut("UpdateOrder")]
-        [Authorize(Policy = "UserOrAdmin")]
-        public IActionResult UpdateOrder([FromRoute] int id ,[FromBody] OrderRequest request)
-        {
-            var userIdClaim = User.FindFirst("Id");
-            if (userIdClaim == null)
-                return Unauthorized("No se encontró el ID del usuario en el token.");
-            int tokenUserId = int.Parse(userIdClaim.Value);
-            var order = _OrderService.UpdateOrder(request.Dirección_Envio, id ,tokenUserId);
-            if (order == false)
-            {
-                return BadRequest("No se pudo crear el usuario.");
-            }
-            return Ok($"Order creado con exito");
-        }
-        */
 
         [HttpPut("UpdateAdress/{id}")]
         [Authorize(Policy = "UserOrAdmin")]
@@ -212,7 +171,7 @@ namespace Proyecto_Braian.Controllers
             var Order = _OrderService.CancelOrder(id, tokenUserId, userRole);
             return Ok($"Order {Order} cancelada con exito");
         }
-       
+
         [HttpPut("ConfirmOrder/{id}")]
         [Authorize(Policy = "Admin")]
         public ActionResult<bool> ConfirmOrder([FromRoute] int id)
@@ -220,7 +179,7 @@ namespace Proyecto_Braian.Controllers
             var Order = _OrderService.ConfirmOrder(id);
             return Ok($"Order {Order} confirmada con exito");
         }
-       
+
         [HttpPut("PagoOrder/{id}")]
         [Authorize(Policy = "Admin")]
         public ActionResult<bool> PagoOrder([FromRoute] int id)

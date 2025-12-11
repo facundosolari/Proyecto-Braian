@@ -65,28 +65,40 @@ namespace Application.Services
         }
 
         public (List<OrderResponse> Orders, int TotalCount) GetOrdersByUserIdPaginated(
-           int userId,
-           int page,
-           int pageSize,
-           bool? tieneMensajesNoLeidos = null
-       )
+    int userId,
+    int page,
+    int pageSize,
+    bool? tieneMensajesNoLeidos = null,
+    int? estado = null,
+    bool esAdmin = false,
+    DateTime? fechaDesde = null,
+    DateTime? fechaHasta = null,
+    string sortBy = "FechaHora",
+    string sortOrder = "desc")
         {
+            EstadoPedido? estadoEnum = null;
+
+            if (estado.HasValue)
+                estadoEnum = (EstadoPedido)estado.Value;
+
             var (orders, totalCount) = _OrderRepository.GetOrdersByUserIdPaginated(
-                userId, page, pageSize, tieneMensajesNoLeidos
+                userId,
+                page,
+                pageSize,
+                tieneMensajesNoLeidos,
+                estadoEnum,     // 👈 AHORA PASAS ENUM
+                esAdmin,
+                fechaDesde,
+                fechaHasta,
+                sortBy,
+                sortOrder
             );
 
             var response = OrderDTO.ToOrderResponse(orders);
 
             return (response, totalCount);
         }
-        /*
-        public (List<OrderResponse> Orders, int TotalCount) GetOrdersByEstadoPaginated(EstadoPedido estadoPedido, int page, int pageSize)
-        {
-            var (orders, totalCount) = _OrderRepository.GetOrdersByEstadoPaginated(estadoPedido, page, pageSize);
-            var response = OrderDTO.ToOrderResponse(orders);
-            return (response, totalCount);
-        }
-        */
+
 
         public (List<OrderResponse> Orders, int TotalCount) GetOrdersByEstadoPaginated(
             EstadoPedido estadoPedido,
