@@ -51,14 +51,37 @@ namespace Infrastructure.Data
                 .ToList();
         }
 
-        public (List<Order> Orders, int TotalCount) GetOrdersByUserIdPaginated(int userId, int page, int pageSize)
+        public (List<Order> Orders, int TotalCount) GetOrdersByUserIdPaginated(
+    int userId,
+    int page,
+    int pageSize,
+    bool? tieneMensajesNoLeidos = null // 👈 AGREGO ESTO
+)
         {
             var query = _databaseContext.Orders
                 .Include(o => o.OrderItems)
                     .ThenInclude(oi => oi.ProductSize)
                         .ThenInclude(ps => ps.Product)
-                .Where(o => o.UserId == userId)
-                .OrderByDescending(o => o.FechaHora);
+                .Include(o => o.Messages)
+                .Where(o => o.UserId == userId);
+
+            // 🔥 FILTRO POR MENSAJES DEL USER 🔥
+            if (tieneMensajesNoLeidos == true)
+            {
+                // SOLO órdenes con mensajes NO leídos
+                query = query.Where(o =>
+                    o.Messages.Any(m => m.Habilitado && !m.LeidoPorUser)
+                );
+            }
+            else if (tieneMensajesNoLeidos == false)
+            {
+                // SOLO órdenes donde NO existen mensajes no leídos
+                query = query.Where(o =>
+                    !o.Messages.Any(m => m.Habilitado && !m.LeidoPorUser)
+                );
+            }
+
+            query = query.OrderByDescending(o => o.FechaHora);
 
             var totalCount = query.Count();
 
@@ -70,18 +93,21 @@ namespace Infrastructure.Data
             return (orders, totalCount);
         }
         public (List<Order> Orders, int TotalCount) GetOrdersByEstadoPaginated(
-    EstadoPedido estadoPedido,
-    int page,
-    int pageSize,
-    DateTime? fechaDesde = null,
-    DateTime? fechaHasta = null,
-    string sortBy = "FechaHora",
-    string sortOrder = "desc")
+            EstadoPedido estadoPedido,
+            int page,
+            int pageSize,
+            DateTime? fechaDesde = null,
+            DateTime? fechaHasta = null,
+            bool? tieneMensajesNoLeidos = null,
+            bool esAdmin = false,
+            string sortBy = "FechaHora",
+            string sortOrder = "desc")
         {
             var query = _databaseContext.Orders
                 .Include(o => o.OrderItems)
                     .ThenInclude(oi => oi.ProductSize)
                         .ThenInclude(ps => ps.Product)
+                .Include(o => o.Messages)
                 .Where(o => o.EstadoPedido == estadoPedido);
 
             if (fechaDesde.HasValue)
@@ -90,7 +116,24 @@ namespace Infrastructure.Data
             if (fechaHasta.HasValue)
                 query = query.Where(o => o.FechaHora <= fechaHasta.Value);
 
-            // Orden dinámico
+            // 🔥 FILTRO POR MENSAJES NO LEÍDOS SEGÚN ROL 🔥
+            // 🔥 FILTRO SOLO PARA ADMIN 🔥
+            if (tieneMensajesNoLeidos == true)
+            {
+                // Órdenes con al menos un mensaje habilitado NO leído por admin
+                query = query.Where(o =>
+                    o.Messages.Any(m => m.Habilitado && !m.LeidoPorAdmin)
+                );
+            }
+            else if (tieneMensajesNoLeidos == false)
+            {
+                // Órdenes donde NO existen mensajes habilitados sin leer por admin
+                query = query.Where(o =>
+                    !o.Messages.Any(m => m.Habilitado && !m.LeidoPorAdmin)
+                );
+            }
+
+            // Ordenamiento dinámico
             query = (sortBy, sortOrder.ToLower()) switch
             {
                 ("Id", "asc") => query.OrderBy(o => o.Id),

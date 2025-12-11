@@ -55,16 +55,28 @@ namespace Proyecto_Braian.Controllers
         }
         [HttpGet("UserOrders")]
         [Authorize(Policy = "UserOrAdmin")]
-        public IActionResult GetOrdersByUser(int page = 1, int pageSize = 10)
+        public IActionResult GetOrdersByUser(
+    int page = 1,
+    int pageSize = 10,
+    bool? tieneMensajesNoLeidos = null  // 👈 NUEVO
+)
         {
             var userIdClaim = User.Claims.FirstOrDefault(c => c.Type == "Id")?.Value;
 
             if (userIdClaim == null)
                 return Unauthorized("Token inválido");
 
-            int userId = int.Parse(userIdClaim); // tu método de autenticación
-            var (orders, totalCount) = _OrderService.GetOrdersByUserIdPaginated(userId, page, pageSize);
-            return Ok(new { orders, totalCount });
+            int userId = int.Parse(userIdClaim);
+
+            var (orders, totalCount) = _OrderService.GetOrdersByUserIdPaginated(
+                userId, page, pageSize, tieneMensajesNoLeidos
+            );
+
+            return Ok(new
+            {
+                orders,
+                totalCount
+            });
         }
         /*
         [HttpGet("byEstado")]
@@ -105,15 +117,17 @@ namespace Proyecto_Braian.Controllers
     [FromQuery] int pageSize = 20,
     [FromQuery] DateTime? fechaDesde = null,
     [FromQuery] DateTime? fechaHasta = null,
+    [FromQuery] bool? tieneMensajesNoLeidos = null,
     [FromQuery] string sortBy = "FechaHora",
     [FromQuery] string sortOrder = "desc") // "asc" o "desc"
         {
             try
             {
+                bool esAdmin = true;
                 var estadoEnum = (EstadoPedido)estadoPedido;
 
                 var (orders, totalCount) = _OrderService.GetOrdersByEstadoPaginated(
-                    estadoEnum, page, pageSize, fechaDesde, fechaHasta, sortBy, sortOrder
+                    estadoEnum, page, pageSize, fechaDesde, fechaHasta,tieneMensajesNoLeidos, esAdmin, sortBy, sortOrder
                 );
 
                 return Ok(new
@@ -130,8 +144,6 @@ namespace Proyecto_Braian.Controllers
                 return StatusCode(500, new { Message = ex.Message });
             }
         }
-
-
 
         [HttpPost("CreateOrder")]
         [Authorize(Policy = "UserOrAdmin")]

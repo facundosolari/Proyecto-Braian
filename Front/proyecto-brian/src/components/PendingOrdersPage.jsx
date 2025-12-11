@@ -52,6 +52,9 @@ export default function PendingOrdersPage() {
   const [sortBy, setSortBy] = useState("FechaHora");
   const [sortOrder, setSortOrder] = useState("desc");
 
+  // 🔥 NUEVO FILTRO: mensajes leídos/no leídos
+  const [filterUnread, setFilterUnread] = useState(null);
+
   const estadosMap = {
     0: "Cancelado",
     1: "Pendiente",
@@ -71,13 +74,16 @@ export default function PendingOrdersPage() {
         sortOrder,
       };
 
-      // Convertir fechas a ISO
       if (fechaDesde) params.fechaDesde = new Date(fechaDesde).toISOString();
+
       if (fechaHasta) {
         const hasta = new Date(fechaHasta);
         hasta.setHours(23, 59, 59, 999);
         params.fechaHasta = hasta.toISOString();
       }
+
+      // 🔥 AGREGAMOS EL FILTRO NUEVO
+      if (filterUnread !== null) params.tieneMensajesNoLeidos = filterUnread;
 
       const data = await getOrdersByEstado(params);
 
@@ -98,10 +104,8 @@ export default function PendingOrdersPage() {
       if (action === "pay") await pagoOrder(targetOrderId);
       if (action === "finalize") await finalizeOrder(targetOrderId);
 
-      // Refrescar estado seleccionado
       fetchOrdersByEstado(selectedEstado, pageByEstado[selectedEstado] || 1);
 
-      // Refrescar buscador por ID si está abierto
       if (orderResult && orderResult.id === targetOrderId) {
         const updatedOrder = await getOrderById(targetOrderId);
         const items = await Promise.all(
@@ -176,12 +180,12 @@ export default function PendingOrdersPage() {
     }
   };
 
-  // --- Cargar totales y primera página ---
+  // --- RECARGAR TODO AL CAMBIAR FILTROS ---
   useEffect(() => {
     Object.keys(estadosMap).forEach(key => {
       fetchOrdersByEstado(Number(key), 1);
     });
-  }, [fechaDesde, fechaHasta, sortBy, sortOrder]);
+  }, [fechaDesde, fechaHasta, sortBy, sortOrder, filterUnread]);
 
   return (
     <div className="admin-panel container">
@@ -217,16 +221,18 @@ export default function PendingOrdersPage() {
         />
       </div>
 
-      {/* --- Filtros de fecha y ordenamiento --- */}
+      {/* --- FILTROS --- */}
       <div className="filters-container">
         <label>
           Desde:
           <input type="date" value={fechaDesde} onChange={e => setFechaDesde(e.target.value)} />
         </label>
+
         <label>
           Hasta:
           <input type="date" value={fechaHasta} onChange={e => setFechaHasta(e.target.value)} />
         </label>
+
         <label>
           Ordenar por:
           <select value={sortBy} onChange={e => setSortBy(e.target.value)}>
@@ -234,6 +240,7 @@ export default function PendingOrdersPage() {
             <option value="Id">ID</option>
           </select>
         </label>
+
         <label>
           Orden:
           <select value={sortOrder} onChange={e => setSortOrder(e.target.value)}>
@@ -241,9 +248,26 @@ export default function PendingOrdersPage() {
             <option value="asc">Ascendente</option>
           </select>
         </label>
+
+        {/* 🔥 NUEVO FILTRO */}
+        <label>
+          Mensajes:
+          <select
+            value={filterUnread === null ? "all" : filterUnread ? "unread" : "read"}
+            onChange={(e) => {
+              if (e.target.value === "all") setFilterUnread(null);
+              if (e.target.value === "unread") setFilterUnread(true);
+              if (e.target.value === "read") setFilterUnread(false);
+            }}
+          >
+            <option value="all">Todos</option>
+            <option value="unread">No leídos</option>
+            <option value="read">Leídos</option>
+          </select>
+        </label>
       </div>
 
-      {/* --- TABS DE ESTADOS --- */}
+      {/* --- TABS --- */}
       <div className="orders-tabs">
         {Object.keys(estadosMap).map(key => {
           const estadoKey = Number(key);
@@ -260,7 +284,7 @@ export default function PendingOrdersPage() {
         })}
       </div>
 
-      {/* --- CONTENIDO DEL ESTADO SELECCIONADO --- */}
+      {/* --- ÓRDENES --- */}
       <div className="orders-container">
         {loading && <p>Cargando órdenes...</p>}
 
@@ -274,31 +298,53 @@ export default function PendingOrdersPage() {
           />
         ))}
 
-        {!loading && (!ordersByEstado[selectedEstado] || ordersByEstado[selectedEstado].length === 0) && (
-          <p>No hay órdenes en este estado.</p>
-        )}
+        {!loading &&
+          (!ordersByEstado[selectedEstado] || ordersByEstado[selectedEstado].length === 0) && (
+            <p>No hay órdenes en este estado.</p>
+          )}
       </div>
 
       {/* --- PAGINACIÓN --- */}
-      {ordersByEstado[selectedEstado] && totalByEstado[selectedEstado] > ITEMS_PER_PAGE && (
-        <div className="pagination">
-          <button
-            onClick={() => fetchOrdersByEstado(selectedEstado, (pageByEstado[selectedEstado] || 1) - 1)}
-            disabled={(pageByEstado[selectedEstado] || 1) === 1}
-          >
-            Anterior
-          </button>
+      {ordersByEstado[selectedEstado] &&
+        totalByEstado[selectedEstado] > ITEMS_PER_PAGE && (
+          <div className="pagination">
+            <button
+              onClick={() =>
+                fetchOrdersByEstado(
+                  selectedEstado,
+                  (pageByEstado[selectedEstado] || 1) - 1
+                )
+              }
+              disabled={(pageByEstado[selectedEstado] || 1) === 1}
+            >
+              Anterior
+            </button>
 
-          <span>{pageByEstado[selectedEstado] || 1} / {Math.ceil((totalByEstado[selectedEstado] || 0) / ITEMS_PER_PAGE)}</span>
+            <span>
+              {pageByEstado[selectedEstado] || 1} /{" "}
+              {Math.ceil(
+                (totalByEstado[selectedEstado] || 0) / ITEMS_PER_PAGE
+              )}
+            </span>
 
-          <button
-            onClick={() => fetchOrdersByEstado(selectedEstado, (pageByEstado[selectedEstado] || 1) + 1)}
-            disabled={(pageByEstado[selectedEstado] || 1) === Math.ceil((totalByEstado[selectedEstado] || 0) / ITEMS_PER_PAGE)}
-          >
-            Siguiente
-          </button>
-        </div>
-      )}
+            <button
+              onClick={() =>
+                fetchOrdersByEstado(
+                  selectedEstado,
+                  (pageByEstado[selectedEstado] || 1) + 1
+                )
+              }
+              disabled={
+                (pageByEstado[selectedEstado] || 1) ===
+                Math.ceil(
+                  (totalByEstado[selectedEstado] || 0) / ITEMS_PER_PAGE
+                )
+              }
+            >
+              Siguiente
+            </button>
+          </div>
+        )}
     </div>
   );
 }

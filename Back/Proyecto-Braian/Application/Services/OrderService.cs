@@ -64,10 +64,19 @@ namespace Application.Services
             return null;
         }
 
-        public (List<OrderResponse> Orders, int TotalCount) GetOrdersByUserIdPaginated(int userId, int page, int pageSize)
+        public (List<OrderResponse> Orders, int TotalCount) GetOrdersByUserIdPaginated(
+           int userId,
+           int page,
+           int pageSize,
+           bool? tieneMensajesNoLeidos = null
+       )
         {
-            var (orders, totalCount) = _OrderRepository.GetOrdersByUserIdPaginated(userId, page, pageSize);
+            var (orders, totalCount) = _OrderRepository.GetOrdersByUserIdPaginated(
+                userId, page, pageSize, tieneMensajesNoLeidos
+            );
+
             var response = OrderDTO.ToOrderResponse(orders);
+
             return (response, totalCount);
         }
         /*
@@ -80,19 +89,30 @@ namespace Application.Services
         */
 
         public (List<OrderResponse> Orders, int TotalCount) GetOrdersByEstadoPaginated(
-    EstadoPedido estadoPedido,
-    int page,
-    int pageSize,
-    DateTime? fechaDesde = null,
-    DateTime? fechaHasta = null,
-    string sortBy = "FechaHora",
-    string sortOrder = "desc")
+            EstadoPedido estadoPedido,
+            int page,
+            int pageSize,
+            DateTime? fechaDesde = null,
+            DateTime? fechaHasta = null,
+            bool? tieneMensajesNoLeidos = null,
+            bool esAdmin = false,
+            string sortBy = "FechaHora",
+            string sortOrder = "desc")
         {
             var (orders, totalCount) = _OrderRepository.GetOrdersByEstadoPaginated(
-                estadoPedido, page, pageSize, fechaDesde, fechaHasta, sortBy, sortOrder
+                estadoPedido,
+                page,
+                pageSize,
+                fechaDesde,
+                fechaHasta,
+                tieneMensajesNoLeidos,   // 👈 PASAMOS LO NUEVO
+                esAdmin,                 // 👈 PASAMOS EL ROL
+                sortBy,
+                sortOrder
             );
 
             var response = OrderDTO.ToOrderResponse(orders);
+
             return (response, totalCount);
         }
         /*

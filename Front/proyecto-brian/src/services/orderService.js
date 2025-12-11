@@ -359,13 +359,21 @@ export const softDeleteCategory = async (categoryId) => {
   }
 };
 
-export const getOrdersByUserPaginated = async (page = 1, pageSize = 10) => {
+export const getOrdersByUserPaginated = async (
+  page = 1,
+  pageSize = 10,
+  tieneMensajesNoLeidos = null
+) => {
   try {
     const response = await axiosClient.get(`/Order/UserOrders`, {
-      params: { page, pageSize }
+      params: { 
+        page, 
+        pageSize,
+        tieneMensajesNoLeidos   // 👈 MÁGIA
+      }
     });
-    // Backend devuelve { orders: [...], totalCount: 50 }
-    return response.data;
+
+    return response.data; // { orders, totalCount }
   } catch (error) {
     console.error("Error al obtener órdenes paginadas:", error);
     throw error;
@@ -378,7 +386,8 @@ export const getOrdersByEstado = async ({
   fechaDesde = null,
   fechaHasta = null,
   sortBy = "FechaHora",
-  sortOrder = "desc" // "asc" o "desc"
+  sortOrder = "desc",
+  tieneMensajesNoLeidos = null     // 👈 AGREGAR ESTO
 }) => {
   try {
     const params = {
@@ -386,15 +395,24 @@ export const getOrdersByEstado = async ({
       page,
       pageSize,
       sortBy,
-      sortOrder
+      sortOrder,
     };
 
-    // Solo agregar fechas si existen y formatearlas
+    // 🔥 ENVIARLO SOLO SI NO ES null
+    if (tieneMensajesNoLeidos !== null) {
+      params.tieneMensajesNoLeidos = tieneMensajesNoLeidos;
+    }
+
     if (fechaDesde) params.fechaDesde = new Date(fechaDesde).toISOString();
-    if (fechaHasta) params.fechaHasta = new Date(fechaHasta).toISOString();
+
+    if (fechaHasta) {
+      const hasta = new Date(fechaHasta);
+      hasta.setHours(23, 59, 59, 999);
+      params.fechaHasta = hasta.toISOString();
+    }
 
     const { data } = await axiosClient.get("/Order/byEstado", { params });
-    return data; // { Orders, TotalCount, Page, PageSize, TotalPages }
+    return data;
   } catch (error) {
     console.error("Error al obtener órdenes por estado:", error);
     throw error;

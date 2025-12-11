@@ -15,16 +15,22 @@ namespace Application.Interfaces
         OrderResponse? GetOrderById(int id);
         List<OrderResponse>? GetOrdersByUserId(int userId);
         List<OrderResponse>? GetAllOrders();
-        (List<OrderResponse> Orders, int TotalCount) GetOrdersByUserIdPaginated(int userId, int page, int pageSize);
+        (List<OrderResponse> Orders, int TotalCount) GetOrdersByUserIdPaginated(
+           int userId,
+           int page,
+           int pageSize,
+           bool? tieneMensajesNoLeidos = null);
 
         (List<OrderResponse> Orders, int TotalCount) GetOrdersByEstadoPaginated(
-    EstadoPedido estadoPedido,
-    int page,
-    int pageSize,
-    DateTime? fechaDesde = null,
-    DateTime? fechaHasta = null,
-    string sortBy = "FechaHora",
-    string sortOrder = "desc");
+            EstadoPedido estadoPedido,
+            int page,
+            int pageSize,
+            DateTime? fechaDesde = null,
+            DateTime? fechaHasta = null,
+            bool? tieneMensajesNoLeidos = null,
+            bool esAdmin = false,
+            string sortBy = "FechaHora",
+            string sortOrder = "desc");
         //(List<OrderResponse> Orders, int TotalCount) GetOrdersByEstadoPaginated(EstadoPedido estadoPedido, int page, int pageSize);
         bool CreateOrder(OrderRequest request, int tokenUserId);
        // bool UpdateOrder(OrderRequest request, int id, int tokenUserId);
