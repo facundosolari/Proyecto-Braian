@@ -3,7 +3,8 @@ import {
   getOrdersByUserId,
   getOrderById,
   cancelOrder,
-  markMessagesAsRead
+  markMessagesAsRead,
+  getUnreadCount // 🔥 Asegurate de tener esta función en tu orderService
 } from "../services/orderService";
 import { UserContext } from "../context/UserContext";
 import OrderMessages from "./OrderMessages";
@@ -20,27 +21,25 @@ const OrdersSlide = ({ isOpen, onClose }) => {
   const [expandedOrders, setExpandedOrders] = useState({});
   const [messagesOpen, setMessagesOpen] = useState({});
   const [orderItemsCache, setOrderItemsCache] = useState({});
-  const [orderMessagesCache, setOrderMessagesCache] = useState({});
   const [loadingItems, setLoadingItems] = useState({});
-  const [loadingMessages, setLoadingMessages] = useState({});
   const [currentImages, setCurrentImages] = useState({});
   const [currentPage, setCurrentPage] = useState(1);
   const [totalPages, setTotalPages] = useState(1);
 
-  // 🔥 Filtros
   const [filterUnread, setFilterUnread] = useState(false);
   const [estado, setEstado] = useState("");
   const [fechaDesde, setFechaDesde] = useState("");
   const [fechaHasta, setFechaHasta] = useState("");
-  const [sortBy, setSortBy] = useState("FechaHora"); // solo FechaHora o Id
+  const [sortBy, setSortBy] = useState("FechaHora");
   const [sortOrder, setSortOrder] = useState("desc");
+  const [searchOrderId, setSearchOrderId] = useState("");
   const ordersPerPage = 10;
 
   const messagesRefs = useRef({});
   const messagesButtonsRefs = useRef({});
 
   // ==================================================
-  // 🔥 FETCH CENTRALIZADO CON FILTROS
+  // 🔥 FETCH CENTRALIZADO CON FILTROS + unreadCount
   // ==================================================
   const fetchOrdersConFiltros = async (page = 1) => {
     setLoadingOrders(true);
@@ -52,21 +51,28 @@ const OrdersSlide = ({ isOpen, onClose }) => {
         tieneMensajesNoLeidos: filterUnread ? true : null,
         fechaDesde: fechaDesde ? new Date(fechaDesde).toISOString() : null,
         fechaHasta: fechaHasta ? new Date(fechaHasta).toISOString() : null,
-        sortBy, // solo FechaHora o Id
+        sortBy,
         sortOrder
       });
 
-      const normalized = (data.orders || []).map((o) => ({
+      let normalized = (data.orders || []).map((o) => ({
         id: o.id,
         fechaHora: o.fechaHora,
         estadoPedido: o.estadoPedido,
         pagada: o.pagada,
         total: o.total,
         direccion_Envio: o.direccion_Envio,
-        unreadCount: o.unreadCount ?? 0,
         orderItems: o.orderItems ?? [],
-        messages: o.Messages ?? []
+        unreadCount: 0
       }));
+
+      // 🔥 Llamada siempre al endpoint de unreadCount
+      normalized = await Promise.all(
+        normalized.map(async (o) => {
+          const unread = await getUnreadCount(o.id, user.id, user.rol);
+          return { ...o, unreadCount: unread };
+        })
+      );
 
       setOrders(normalized);
       setCurrentPage(page);
@@ -80,11 +86,56 @@ const OrdersSlide = ({ isOpen, onClose }) => {
   };
 
   // ==================================================
+  // 🔥 BUSCAR POR ID + unreadCount
+  // ==================================================
+  const handleSearchById = async () => {
+    if (!searchOrderId) return;
+    setLoadingOrders(true);
+    try {
+      const data = await getOrderById(parseInt(searchOrderId));
+      if (data) {
+        let normalized = [{
+          id: data.id,
+          fechaHora: data.fechaHora,
+          estadoPedido: data.estadoPedido,
+          pagada: data.pagada,
+          total: data.total,
+          direccion_Envio: data.direccion_Envio,
+          orderItems: data.orderItems ?? [],
+          unreadCount: 0
+        }];
+
+        normalized = await Promise.all(
+          normalized.map(async (o) => {
+            const unread = await getUnreadCount(o.id, user.id, user.rol);
+            return { ...o, unreadCount: unread };
+          })
+        );
+
+        setOrders(normalized);
+        setTotalPages(1);
+        setCurrentPage(1);
+      } else {
+        setOrders([]);
+        setTotalPages(1);
+        setCurrentPage(1);
+      }
+    } catch (error) {
+      console.error("Error buscando orden por ID:", error);
+      setOrders([]);
+      setTotalPages(1);
+      setCurrentPage(1);
+    } finally {
+      setLoadingOrders(false);
+    }
+  };
+
+  // ==================================================
   // 🔥 USE EFFECT PRINCIPAL
   // ==================================================
   useEffect(() => {
-    if (isOpen && user) fetchOrdersConFiltros(1);
-  }, [isOpen, user, filterUnread, estado, fechaDesde, fechaHasta, sortBy, sortOrder]);
+    if (isOpen && user && !searchOrderId) fetchOrdersConFiltros(1);
+  }, [isOpen, user, filterUnread, estado, fechaDesde, fechaHasta, sortBy, sortOrder, searchOrderId]);
 
   // ==================================================
   // 🔥 FUNCIONES AUXILIARES
@@ -164,16 +215,6 @@ const OrdersSlide = ({ isOpen, onClose }) => {
     const wasOpen = messagesOpen[orderId];
     setMessagesOpen((prev) => ({ ...prev, [orderId]: !prev[orderId] }));
 
-    if (!orderMessagesCache[orderId] && !loadingMessages[orderId]) {
-      setLoadingMessages((prev) => ({ ...prev, [orderId]: true }));
-      try {
-        const data = await getOrderById(orderId);
-        setOrderMessagesCache((prev) => ({ ...prev, [orderId]: data.messages || [] }));
-      } finally {
-        setLoadingMessages((prev) => ({ ...prev, [orderId]: false }));
-      }
-    }
-
     if (!wasOpen) {
       try {
         await markMessagesAsRead(orderId);
@@ -241,6 +282,18 @@ const OrdersSlide = ({ isOpen, onClose }) => {
         <div className="orders-filters">
           <h3>Filtros</h3>
 
+          <label>Buscar orden por ID:</label>
+          <div className="search-order-id">
+            <input
+              type="number"
+              value={searchOrderId}
+              onChange={(e) => setSearchOrderId(e.target.value)}
+              placeholder="Ingrese ID de la orden"
+            />
+            <button onClick={handleSearchById}>Buscar</button>
+            <button onClick={() => { setSearchOrderId(""); fetchOrdersConFiltros(1); }}>Limpiar</button>
+          </div>
+
           <label>Estado</label>
           <select value={estado} onChange={(e) => setEstado(e.target.value)}>
             <option value="">Todos</option>
@@ -275,7 +328,7 @@ const OrdersSlide = ({ isOpen, onClose }) => {
 
           <button className="orders-reset-btn" onClick={() => {
             setEstado(""); setFilterUnread(false); setFechaDesde(""); setFechaHasta("");
-            setSortBy("FechaHora"); setSortOrder("desc");
+            setSortBy("FechaHora"); setSortOrder("desc"); setSearchOrderId("");
             fetchOrdersConFiltros(1);
           }}>Limpiar filtros</button>
         </div>
@@ -283,9 +336,11 @@ const OrdersSlide = ({ isOpen, onClose }) => {
         {/* CONTENIDO */}
         <div className="orders-content">
           <h2>
-            Órdenes de {user.nombre || user.usuario || user.email}
+            Órdenes de {user.nombre || user.usuario || user.email}  
             {orders.filter((o) => o.unreadCount > 0).length > 0 && (
-              <span className="unread-counter">({orders.filter((o) => o.unreadCount > 0).length} con mensajes nuevos)</span>
+              <span className="unread-counter">
+                ({orders.filter((o) => o.unreadCount > 0).length} con mensajes nuevos)
+              </span>
             )}
           </h2>
 
@@ -313,8 +368,13 @@ const OrdersSlide = ({ isOpen, onClose }) => {
                     <button onClick={() => toggleOrderDetail(o.id)}>
                       {expandedOrders[o.id] ? "Ocultar Detalle" : "Ver Detalle"}
                     </button>
-                    <button ref={(el) => (messagesButtonsRefs.current[o.id] = el)} onClick={() => toggleOrderMessages(o.id)}>
-                      {messagesOpen[o.id] ? "Ocultar Mensajes" : `Ver Mensajes (${o.unreadCount || 0})`}
+                    <button
+                      ref={(el) => (messagesButtonsRefs.current[o.id] = el)}
+                      onClick={() => toggleOrderMessages(o.id)}
+                    >
+                      {messagesOpen[o.id]
+                        ? `Ocultar Mensajes (${o.unreadCount})`
+                        : `Ver Mensajes (${o.unreadCount})`}
                     </button>
                     {isCancelable(o) && <button className="cancel-btn" onClick={() => handleCancelOrder(o.id)}>Cancelar</button>}
                   </div>
@@ -362,7 +422,11 @@ const OrdersSlide = ({ isOpen, onClose }) => {
                         isOpen={true}
                         onClose={() => setMessagesOpen((prev) => ({ ...prev, [o.id]: false }))}
                         onUnreadCountChange={(orderId, unreadCount) => {
-                          setOrders((prev) => prev.map((o) => o.id === orderId ? { ...o, unreadCount } : o));
+                          setOrders((prev) =>
+                            prev.map((o) =>
+                              o.id === orderId ? { ...o, unreadCount } : o
+                            )
+                          );
                         }}
                       />
                     </div>

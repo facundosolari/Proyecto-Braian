@@ -33,15 +33,17 @@ namespace Application.Services
             _AuditLogRepository = auditLogRepository;
         }
 
-        public OrderResponse? GetOrderById(int id)
+        public OrderResponse? GetOrderById(int orderId, int? userId = null, bool esAdmin = false)
         {
-            var Order = _OrderRepository.GetOrderById(id);
-            if (Order != null)
-            {
-                return OrderDTO.ToOrderResponse(Order);
-            }
-            return null;
+            var order = _OrderRepository.GetOrderById(orderId);
 
+            if (order == null) return null;
+
+            // 🔒 Validar permisos
+            if (!esAdmin && order.UserId != userId)
+                return null;
+
+            return OrderDTO.ToOrderResponse(order);
         }
 
         public List<OrderResponse>? GetOrdersByUserId(int userId)
@@ -65,36 +67,36 @@ namespace Application.Services
         }
 
         public (List<OrderResponse> Orders, int TotalCount) GetOrdersByUserIdPaginated(
-    int userId,
-    int page,
-    int pageSize,
-    bool? tieneMensajesNoLeidos = null,
-    int? estado = null,
-    bool esAdmin = false,
-    DateTime? fechaDesde = null,
-    DateTime? fechaHasta = null,
-    string sortBy = "FechaHora",
-    string sortOrder = "desc")
+            int userId,
+            int page,
+            int pageSize,
+            bool? tieneMensajesNoLeidos = null,
+            int? estado = null,          // 🔥 sigue siendo int? para el servicio
+            bool esAdmin = false,
+            DateTime? fechaDesde = null,
+            DateTime? fechaHasta = null,
+            string sortBy = "FechaHora",
+            string sortOrder = "desc")
         {
-            EstadoPedido? estadoEnum = null;
+            // Convertimos int? a enum nullable solo para el repositorio
+            EstadoPedido? estadoEnum = estado.HasValue ? (EstadoPedido)estado.Value : (EstadoPedido?)null;
 
-            if (estado.HasValue)
-                estadoEnum = (EstadoPedido)estado.Value;
-
+            // Llamada al repositorio que ya maneja Include de Messages
             var (orders, totalCount) = _OrderRepository.GetOrdersByUserIdPaginated(
                 userId,
                 page,
                 pageSize,
                 tieneMensajesNoLeidos,
-                estadoEnum,     // 👈 AHORA PASAS ENUM
                 esAdmin,
+                estadoEnum,   // pasamos enum solo internamente
                 fechaDesde,
                 fechaHasta,
                 sortBy,
                 sortOrder
             );
 
-            var response = OrderDTO.ToOrderResponse(orders);
+            // Mapeo a DTO normal, sin DTO interno
+            var response = orders.Select(OrderDTO.ToOrderResponse).ToList();
 
             return (response, totalCount);
         }

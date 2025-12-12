@@ -40,6 +40,7 @@
 
 .cart-slide.open {
   transform: scaleX(1);
+  padding-top: 100px;
   background: #4774e975;
 }
 

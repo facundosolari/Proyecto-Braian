@@ -80,8 +80,31 @@ namespace Proyecto_Braian.Controllers
         [Authorize(Policy = "UserOrAdmin")]
         public ActionResult<OrderResponse?> GetOrderById([FromRoute] int id)
         {
-            var Order = _OrderService.GetOrderById(id);
-            return Ok(Order);
+            // 🔹 Obtener el userId y rol desde los claims
+            var userIdClaim = User.Claims.FirstOrDefault(c => c.Type == "Id")?.Value;
+            var roleClaim = User.Claims.FirstOrDefault(c => c.Type == "Rol")?.Value;
+
+            if (roleClaim == null)
+                return Unauthorized("No se pudo obtener el rol del usuario del token.");
+
+            bool esAdmin = roleClaim == "Admin";
+
+            int? userId = null;
+            if (!esAdmin)
+            {
+                if (userIdClaim == null)
+                    return Unauthorized("No se pudo obtener el usuario del token.");
+
+                userId = int.Parse(userIdClaim);
+            }
+
+            // 🔹 Obtener la orden pasando userId solo si no es admin
+            var order = _OrderService.GetOrderById(id, userId, esAdmin);
+
+            if (order == null)
+                return NotFound("Orden no encontrada o no tenés permisos para verla.");
+
+            return Ok(order);
         }
 
 

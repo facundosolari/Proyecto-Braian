@@ -36,7 +36,6 @@ namespace Infrastructure.Data
                 .Include(o => o.OrderItems)
                     .ThenInclude(oi => oi.ProductSize)
                         .ThenInclude(ps => ps.Product)
-                         //   .ThenInclude(p => p.Fotos)
                 .FirstOrDefault(x => x.Id == id);
         }
 
@@ -56,8 +55,8 @@ namespace Infrastructure.Data
     int page,
     int pageSize,
     bool? tieneMensajesNoLeidos = null,
-    EstadoPedido? estado = null,
     bool esAdmin = false,
+    EstadoPedido? estado = null,
     DateTime? fechaDesde = null,
     DateTime? fechaHasta = null,
     string sortBy = "FechaHora",
@@ -67,34 +66,31 @@ namespace Infrastructure.Data
                 .Include(o => o.OrderItems)
                     .ThenInclude(oi => oi.ProductSize)
                         .ThenInclude(ps => ps.Product)
-                .Include(o => o.Messages)
+                .Include(o => o.Messages) // necesario para contar mensajes no leídos
                 .Where(o => o.UserId == userId);
 
             if (estado.HasValue)
                 query = query.Where(o => o.EstadoPedido == estado.Value);
 
-            // 🔥 FILTRO DE FECHAS 🔥
             if (fechaDesde.HasValue)
                 query = query.Where(o => o.FechaHora >= fechaDesde.Value);
 
             if (fechaHasta.HasValue)
                 query = query.Where(o => o.FechaHora <= fechaHasta.Value);
 
-            // 🔥 FILTRO POR MENSAJES NO LEÍDOS 🔥
-            if (tieneMensajesNoLeidos == true)
+            if (tieneMensajesNoLeidos.HasValue)
             {
-                query = esAdmin
-                    ? query.Where(o => o.Messages.Any(m => m.Habilitado && !m.LeidoPorAdmin))
-                    : query.Where(o => o.Messages.Any(m => m.Habilitado && !m.LeidoPorUser));
-            }
-            else if (tieneMensajesNoLeidos == false)
-            {
-                query = esAdmin
-                    ? query.Where(o => !o.Messages.Any(m => m.Habilitado && !m.LeidoPorAdmin))
-                    : query.Where(o => !o.Messages.Any(m => m.Habilitado && !m.LeidoPorUser));
+                if (tieneMensajesNoLeidos.Value)
+                {
+                    query = query.Where(o => o.Messages.Any(m => m.Habilitado && (esAdmin ? !m.LeidoPorAdmin : !m.LeidoPorUser)));
+                }
+                else
+                {
+                    query = query.Where(o => !o.Messages.Any(m => m.Habilitado && (esAdmin ? !m.LeidoPorAdmin : !m.LeidoPorUser)));
+                }
             }
 
-            // 🔥 ORDENAMIENTO 🔥
+            // Ordenamiento
             query = (sortBy, sortOrder.ToLower()) switch
             {
                 ("Id", "asc") => query.OrderBy(o => o.Id),
@@ -113,6 +109,7 @@ namespace Infrastructure.Data
 
             return (orders, totalCount);
         }
+
         public (List<Order> Orders, int TotalCount) GetOrdersByEstadoPaginated(
             EstadoPedido estadoPedido,
             int page,
