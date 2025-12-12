@@ -39,8 +39,8 @@ namespace Application.Interfaces
             string sortOrder = "desc");
         //(List<OrderResponse> Orders, int TotalCount) GetOrdersByEstadoPaginated(EstadoPedido estadoPedido, int page, int pageSize);
         bool CreateOrder(OrderRequest request, int tokenUserId);
-       // bool UpdateOrder(OrderRequest request, int id, int tokenUserId);
-        bool UpdateOrder(string direccion, int id, int tokenUserId);
+        // bool UpdateOrder(OrderRequest request, int id, int tokenUserId);
+        bool UpdateOrderDetalleFacturacion(int orderId, DetalleFacturacionRequest request, int tokenUserId, string userRol);
         bool CancelOrder(int id, int userId, string rolClaim);
         bool ConfirmOrder(int id);
 

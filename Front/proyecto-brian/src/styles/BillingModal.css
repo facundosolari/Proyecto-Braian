@@ -1,0 +1,114 @@
+.billing-modal-backdrop {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.55);
+  backdrop-filter: blur(4px);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 20000;
+  padding: 10px;
+}
+
+.billing-modal {
+  background: #ffffff;
+  z-index: 20001;
+  width: 100%;
+  max-width: 450px;
+  padding: 25px 30px;
+  border-radius: 14px;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.25);
+  animation: fadeIn 0.25s ease-out;
+  max-height: 85vh;
+  display: flex;
+  flex-direction: column;
+  box-sizing: border-box;
+}
+
+.billing-modal h3 {
+  text-align: center;
+  font-size: 22px;
+  font-weight: bold;
+  margin-bottom: 20px;
+  color: #333;
+}
+
+/* Aquí solo el contenido del formulario tiene scroll */
+.billing-modal-content {
+  overflow-y: auto;
+  max-height: 50vh; /* ajustar según convenga */
+  padding-right: 5px; /* para el scrollbar */
+}
+
+.billing-modal label {
+  display: flex;
+  flex-direction: column;
+  font-size: 14px;
+  color: #444;
+  margin-bottom: 14px;
+}
+
+.billing-modal input {
+  margin-top: 4px;
+  padding: 10px 12px;
+  border: 1.5px solid #d0d0d0;
+  border-radius: 8px;
+  font-size: 14px;
+  transition: border-color 0.2s, box-shadow 0.2s;
+}
+
+.billing-modal input:focus {
+  outline: none;
+  border-color: #4c7df0;
+  box-shadow: 0 0 0 2px rgba(76, 125, 240, 0.25);
+}
+
+.billing-buttons {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 20px;
+  gap: 10px;
+}
+
+.billing-buttons .btn {
+  flex: 1;
+  padding: 10px 0;
+  font-size: 15px;
+  font-weight: 600;
+  border-radius: 8px;
+  cursor: pointer;
+  border: none;
+  transition: 0.2s;
+}
+
+.billing-buttons .confirm {
+  background: #4c7df0;
+  color: white;
+}
+
+.billing-buttons .confirm:hover {
+  background: #3b67d0;
+}
+
+.billing-buttons .cancel {
+  background: #ddd;
+  color: #333;
+}
+
+.billing-buttons .cancel:hover {
+  background: #c9c9c9;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: scale(0.95);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}

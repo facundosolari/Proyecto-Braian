@@ -421,3 +421,13 @@ export const getOrdersByEstado = async ({
     throw error;
   }
 };
+
+export const updateOrderDetalleFacturacion = async (orderId, payload) => {
+  try {
+    const response = await axiosClient.put(`/Order/UpdateDetalleFacturacion/${orderId}`, payload);
+    return response.data;
+  } catch (error) {
+    console.error("Error actualizando detalle de facturación:", error);
+    throw error;
+  }
+};

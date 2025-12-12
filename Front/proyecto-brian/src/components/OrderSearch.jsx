@@ -8,7 +8,8 @@ export const OrderSearch = ({
   showOrderResult,
   setShowOrderResult,
   buscarOrden,
-  handleAction // <-- recibimos la función desde PendingOrdersPage
+  handleAction, // recibe la función de PendingOrdersPage
+  handleOpenBilling // 🔥 nueva función para abrir modal de facturación
 }) => {
 
   // wrapper para actualizar el orderResult local al instante
@@ -45,8 +46,9 @@ export const OrderSearch = ({
             <OrderDisplay
               order={orderResult}
               isExpanded={true}
-              onAction={handleActionClick} // <-- ahora se actualiza correctamente
-              onToggleExpand={() => {}} // obligatorio porque OrderDisplay lo espera
+              onAction={handleActionClick} // actualizar al instante
+              onToggleExpand={() => {}} // obligatorio
+              onOpenBilling={handleOpenBilling} // 🔥 facturación disponible
             />
           </div>
         </>

@@ -23,6 +23,7 @@ namespace Infrastructure.Data
         public List<Order> GetAllOrder()
         {
             return _databaseContext.Orders
+                .Include(o => o.DetalleFacturacion)
                 .Include(o => o.OrderItems)
                     .ThenInclude(oi => oi.ProductSize)
                         .ThenInclude(ps => ps.Product)
@@ -33,6 +34,7 @@ namespace Infrastructure.Data
         public Order? GetOrderById(int id)
         {
             return _databaseContext.Orders
+                .Include(o => o.DetalleFacturacion)
                 .Include(o => o.OrderItems)
                     .ThenInclude(oi => oi.ProductSize)
                         .ThenInclude(ps => ps.Product)
@@ -42,6 +44,7 @@ namespace Infrastructure.Data
         public List<Order>? GetOrdersByUserId(int userId)
         {
             return _databaseContext.Orders
+                .Include(o => o.DetalleFacturacion)
                 .Include(o => o.OrderItems)
                     .ThenInclude(oi => oi.ProductSize)
                         .ThenInclude(ps => ps.Product)
@@ -63,6 +66,7 @@ namespace Infrastructure.Data
     string sortOrder = "desc")
         {
             var query = _databaseContext.Orders
+                .Include(o => o.DetalleFacturacion)
                 .Include(o => o.OrderItems)
                     .ThenInclude(oi => oi.ProductSize)
                         .ThenInclude(ps => ps.Product)
@@ -122,6 +126,7 @@ namespace Infrastructure.Data
             string sortOrder = "desc")
         {
             var query = _databaseContext.Orders
+                .Include(o => o.DetalleFacturacion)
                 .Include(o => o.OrderItems)
                     .ThenInclude(oi => oi.ProductSize)
                         .ThenInclude(ps => ps.Product)

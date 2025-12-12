@@ -19,6 +19,7 @@ namespace Infrastructure.Context
         public DbSet<AuditLog> AuditLogs { get; set; }
         public DbSet<OrderMessage> OrderMessages { get; set; }
         public DbSet<Category> Categories { get; set; }
+        public DbSet<DetalleFacturacion> DetallesFacturacion { get; set; }
 
         protected override void OnModelCreating(ModelBuilder builder)
         {
@@ -67,6 +68,11 @@ namespace Infrastructure.Context
                 .WithMany(u => u.Orders)
                 .HasForeignKey(o => o.UserId)
                 .OnDelete(DeleteBehavior.Restrict);
+            builder.Entity<Order>()
+                .HasOne(o => o.DetalleFacturacion)
+                .WithOne(df => df.Order)
+                .HasForeignKey<DetalleFacturacion>(df => df.OrderId)
+                .OnDelete(DeleteBehavior.Cascade);
 
             builder.Entity<OrderMessage>()
                 .HasOne(om => om.Order)

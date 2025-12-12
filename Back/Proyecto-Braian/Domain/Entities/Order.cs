@@ -20,6 +20,6 @@ namespace Domain.Entities
         public int Total { get; set; }
         public EstadoPedido EstadoPedido { get; set; } = EstadoPedido.Pendiente;
         public bool Habilitado { get; set; } = true;
-        public string Dirección_Envio {  get; set; } 
+        public DetalleFacturacion DetalleFacturacion { get; set; }
     }
 }

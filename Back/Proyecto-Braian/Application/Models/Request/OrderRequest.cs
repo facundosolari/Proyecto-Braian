@@ -9,6 +9,6 @@ namespace Application.Models.Request
     public class OrderRequest
     {
         public List<OrderItemRequest> Items { get; set; } = new List<OrderItemRequest>();
-        public required string Dirección_Envio {  get; set; }
+        public required DetalleFacturacionRequest DetalleFacturacion {  get; set; }
     }
 }

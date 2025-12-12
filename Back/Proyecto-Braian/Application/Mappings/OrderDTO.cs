@@ -11,7 +11,7 @@ namespace Application.Mappings
             return new Order()
             {
                 OrderItems = new List<OrderItem>(),
-                Dirección_Envio = request.Dirección_Envio,
+                DetalleFacturacion = DetalleFacturacionDTO.ToDetalleFacturacionEntity(request.DetalleFacturacion),
             };
         }
 
@@ -31,7 +31,7 @@ namespace Application.Mappings
                 Total = order.Total,
                 EstadoPedido = order.EstadoPedido,
                 Habilitado = order.Habilitado,
-                Dirección_Envio = order.Dirección_Envio,
+                Detalle_Facturacion = DetalleFacturacionDTO.ToDetalleFacturacionResponse(order.DetalleFacturacion),
             };
         }
 
@@ -42,12 +42,12 @@ namespace Application.Mappings
 
         public static void ToOrderUpdate(Order order, OrderRequest request)
         {
-            order.Dirección_Envio = request.Dirección_Envio;
+            order.DetalleFacturacion = DetalleFacturacionDTO.ToDetalleFacturacionEntity(request.DetalleFacturacion);
         }
 
         public static void ToOrderUpdate(Order order, OrderPatchRequest request)
         {
-            order.Dirección_Envio = request.Dirección_Envio;
+         //   order.Dirección_Envio = request.Dirección_Envio;
         }
     }
 }

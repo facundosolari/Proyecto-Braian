@@ -28,24 +28,30 @@ export const ProductSearch = ({
 
     {showProductResult && productResult && (
       <>
+        {/* Overlay oscuro */}
         <div className="search-overlay" onClick={() => setShowProductResult(false)}></div>
+
+        {/* Panel centrado */}
         <div className="search-result-panel">
           <button className="close-btn" onClick={() => setShowProductResult(false)}>×</button>
           <p><strong>{productResult.nombre}</strong></p>
           <p>ID: {productResult.id}</p>
           <p>Habilitado: {productResult.habilitado ? "Sí" : "No"}</p>
+
           {productResult.talles?.length > 0 && (
             <>
               <h5>Talles disponibles:</h5>
-              {productResult.talles.map((t) => (
-                <div key={t.id} style={{ marginBottom: "6px" }}>
-                  <p>
-                    <strong>Talle:</strong> {t.talle} - 
-                    <strong>Stock:</strong> {t.stock} - 
-                    <strong>Habilitado:</strong> {t.habilitado ? "Sí" : "No"}
-                  </p>
-                </div>
-              ))}
+              <div className="talles-list">
+                {productResult.talles.map((t) => (
+                  <div key={t.id} className="talle-item">
+                    <p>
+                      <strong>Talle:</strong> {t.talle} - 
+                      <strong>Stock:</strong> {t.stock} - 
+                      <strong>Habilitado:</strong> {t.habilitado ? "Sí" : "No"}
+                    </p>
+                  </div>
+                ))}
+              </div>
             </>
           )}
         </div>

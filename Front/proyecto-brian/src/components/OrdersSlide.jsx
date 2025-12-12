@@ -4,10 +4,12 @@ import {
   getOrderById,
   cancelOrder,
   markMessagesAsRead,
-  getUnreadCount // 🔥 Asegurate de tener esta función en tu orderService
+  getUnreadCount,
+  updateOrderDetalleFacturacion
 } from "../services/orderService";
 import { UserContext } from "../context/UserContext";
 import OrderMessages from "./OrderMessages";
+import BillingDetailModal from "../components/BillingDetailModal";
 import "../styles/OrdersSlide.css";
 
 const NO_IMAGE = "https://via.placeholder.com/150?text=Sin+imagen";
@@ -26,6 +28,7 @@ const OrdersSlide = ({ isOpen, onClose }) => {
   const [currentPage, setCurrentPage] = useState(1);
   const [totalPages, setTotalPages] = useState(1);
 
+  // FILTROS
   const [filterUnread, setFilterUnread] = useState(false);
   const [estado, setEstado] = useState("");
   const [fechaDesde, setFechaDesde] = useState("");
@@ -35,11 +38,15 @@ const OrdersSlide = ({ isOpen, onClose }) => {
   const [searchOrderId, setSearchOrderId] = useState("");
   const ordersPerPage = 10;
 
+  // FACTURACIÓN
+  const [showBilling, setShowBilling] = useState(false);
+  const [billingDetalle, setBillingDetalle] = useState(null);
+
   const messagesRefs = useRef({});
   const messagesButtonsRefs = useRef({});
 
   // ==================================================
-  // 🔥 FETCH CENTRALIZADO CON FILTROS + unreadCount
+  // 🔥 FETCH ORDENES CON FILTROS + unreadCount
   // ==================================================
   const fetchOrdersConFiltros = async (page = 1) => {
     setLoadingOrders(true);
@@ -63,10 +70,10 @@ const OrdersSlide = ({ isOpen, onClose }) => {
         total: o.total,
         direccion_Envio: o.direccion_Envio,
         orderItems: o.orderItems ?? [],
+        detalle_Facturacion: o.detalle_Facturacion ?? null,
         unreadCount: 0
       }));
 
-      // 🔥 Llamada siempre al endpoint de unreadCount
       normalized = await Promise.all(
         normalized.map(async (o) => {
           const unread = await getUnreadCount(o.id, user.id, user.rol);
@@ -102,6 +109,7 @@ const OrdersSlide = ({ isOpen, onClose }) => {
           total: data.total,
           direccion_Envio: data.direccion_Envio,
           orderItems: data.orderItems ?? [],
+          detalle_Facturacion: data.detalle_Facturacion ?? null,
           unreadCount: 0
         }];
 
@@ -267,6 +275,46 @@ const OrdersSlide = ({ isOpen, onClose }) => {
     return () => document.removeEventListener("mousedown", handleClickOutside);
   }, []);
 
+  // ==================================================
+  // 🔥 FACTURACIÓN
+  // ==================================================
+  const handleOpenBilling = (detalle, orderId) => {
+  if (!detalle) return;
+
+  // Nos aseguramos que tenga id
+  const detalleConId = { ...detalle, id: detalle.id ?? detalle.DetalleId ?? orderId };
+  setBillingDetalle(detalleConId);
+  setShowBilling(true);
+};
+
+  const handleSaveBilling = async (data) => {
+    if (!data.id) return console.warn("No hay ID de detalle para actualizar");
+
+    try {
+      await updateOrderDetalleFacturacion(data.id, data);
+
+      const updatedOrder = await getOrderById(data.orderId || data.id);
+
+      // Actualizar items cache si está expandida
+      setOrderItemsCache((prev) => ({
+        ...prev,
+        [updatedOrder.id]: updatedOrder.orderItems.map(item => ({
+          ...item,
+          fotos: item.fotos || [NO_IMAGE],
+        }))
+      }));
+
+      setOrders((prev) =>
+        prev.map((o) => (o.id === updatedOrder.id ? { ...o, detalle_Facturacion: updatedOrder.detalle_Facturacion } : o))
+      );
+
+      setBillingDetalle(updatedOrder.detalle_Facturacion);
+      setShowBilling(false);
+    } catch (err) {
+      console.error("Error actualizando detalle de facturación:", err);
+    }
+  };
+
   if (!user) return null;
 
   // ==================================================
@@ -361,7 +409,6 @@ const OrdersSlide = ({ isOpen, onClose }) => {
                       <span className={`payment-badge ${o.pagada ? "pagada" : "no-pagada"}`}>{o.pagada ? "Pagada" : "No pagada"}</span>
                     </p>
                     <p><strong>Total:</strong> ${o.total}</p>
-                    <p><strong>Dirección:</strong> {o.direccion_Envio}</p>
                   </div>
 
                   <div className="order-actions-inline">
@@ -376,6 +423,13 @@ const OrdersSlide = ({ isOpen, onClose }) => {
                         ? `Ocultar Mensajes (${o.unreadCount})`
                         : `Ver Mensajes (${o.unreadCount})`}
                     </button>
+                    
+
+                    {/* 🔥 BOTÓN FACTURACIÓN MODIFICADO */}
+                    <button className="billing-btn" onClick={() => handleOpenBilling(o.detalle_Facturacion, o.id)}>
+                      Ver/Editar Facturación
+                    </button>
+
                     {isCancelable(o) && <button className="cancel-btn" onClick={() => handleCancelOrder(o.id)}>Cancelar</button>}
                   </div>
 
@@ -446,6 +500,16 @@ const OrdersSlide = ({ isOpen, onClose }) => {
             </div>
           )}
         </div>
+
+        {/* 🔥 MODAL FACTURACIÓN */}
+        {showBilling && (
+          <BillingDetailModal
+            isOpen={showBilling}
+            detalle={billingDetalle}
+            onClose={() => setShowBilling(false)}
+            onSave={handleSaveBilling}
+          />
+        )}
       </div>
     </>
   );

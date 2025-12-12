@@ -229,13 +229,27 @@ namespace Application.Services
             return true;
         }
         */
-        public bool UpdateOrder(string direccion, int id, int tokenUserId)
+        public bool UpdateOrderDetalleFacturacion(int orderId, DetalleFacturacionRequest request, int tokenUserId, string userRol)
         {
-            var order = _OrderRepository.GetOrderById(id);
+            var order = _OrderRepository.GetOrderById(orderId);
             if (order == null) return false;
 
-            order.Dirección_Envio = direccion;
+            // Solo el dueño puede modificar sus datos
+            if (order.UserId != tokenUserId && userRol != "Admin") return false;
 
+            if (order.DetalleFacturacion == null)
+            {
+                order.DetalleFacturacion = new DetalleFacturacion
+                {
+                    OrderId = order.Id, // Relación uno a uno
+                    Order = order
+                };
+            }
+
+            // Actualizar la entidad existente
+            DetalleFacturacionDTO.ToUpdateDetalleFacturacion(order.DetalleFacturacion, request);
+
+            // Guardar cambios
             _OrderRepository.UpdateOrder(order);
 
             return true;

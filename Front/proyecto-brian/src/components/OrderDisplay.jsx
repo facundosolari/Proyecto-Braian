@@ -3,7 +3,7 @@ import { OrderItemDisplay } from "./OrderItemDisplay";
 import OrderMessages from "./OrderMessages";
 import { getUnreadCount, markMessagesAsRead } from "../services/orderService";
 
-const OrderDisplay = ({ order, isExpanded, onToggleExpand, onAction }) => {
+const OrderDisplay = ({ order, isExpanded, onToggleExpand, onAction, onOpenBilling }) => {
   const [showMessages, setShowMessages] = useState(false);
   const [unreadCount, setUnreadCount] = useState(0);
 
@@ -89,10 +89,24 @@ const OrderDisplay = ({ order, isExpanded, onToggleExpand, onAction }) => {
               <button className="btn finalize" onClick={() => handleActionClick("finalize")}>Finalizar</button>
             }
           </div>
+            <div className ="buttons-bottom">
 
-          <button className="btn messages-btn" onClick={handleOpenMessages}>
+<button className="btn messages-btn" onClick={handleOpenMessages}>
             Ver Mensajes ({unreadCount})
           </button>
+
+          {/* 🔥 BOTÓN FACTURACIÓN CON ID CORRECTO */}
+          <button
+            className="btn-billing-btn"
+            onClick={() => onOpenBilling({
+              ...order.detalle_Facturacion,
+              id: order.detalle_FacturacionId || order.id // <-- Asegura que tenga id
+            })}
+          >
+            Ver / Editar Facturación
+          </button>
+              </div>
+          
         </div>
       )}
 

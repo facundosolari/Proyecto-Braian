@@ -161,16 +161,17 @@ namespace Proyecto_Braian.Controllers
             return Ok($"Order creado con exito");
         }
 
-        [HttpPut("UpdateAdress/{id}")]
+        [HttpPut("UpdateDetalleFacturacion/{id}")]
         [Authorize(Policy = "UserOrAdmin")]
-        public IActionResult UpdateOrderAddress(int id, [FromBody] OrderPatchRequest request)
+        public IActionResult UpdateDetalleFacturacion(int id, [FromBody] DetalleFacturacionRequest request)
         {
             var userId = int.Parse(User.FindFirst("Id")!.Value);
-            var ok = _OrderService.UpdateOrder(request.Dirección_Envio, id, userId);
+            var userRol = User.FindFirst("Rol")!.Value; // "Admin" o "User"
+            var ok = _OrderService.UpdateOrderDetalleFacturacion(id, request, userId, userRol);
 
-            if (!ok) return BadRequest("No se pudo actualizar la dirección.");
+            if (!ok) return BadRequest("No se pudo actualizar los detalles de la facturación.");
 
-            return Ok("Dirección actualizada con éxito.");
+            return Ok("Datos de facturación actualizados con éxito.");
         }
 
 

@@ -19,6 +19,6 @@ namespace Application.Models.Response
         public int Total { get; set; }
         public EstadoPedido EstadoPedido { get; set; }
         public bool Habilitado { get; set; }
-        public string Dirección_Envio { get; set; }
+        public DetalleFacturacionResponse? Detalle_Facturacion { get; set; }
     }
 }

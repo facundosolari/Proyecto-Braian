@@ -3,12 +3,80 @@
   "WorkspaceRootPath": "C:\\Users\\facus\\OneDrive\\Escritorio\\PaginaBrian\\Back\\Proyecto-Braian\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{964F6C74-E843-47A0-AF0E-2A4282F4DEF6}|Infrastructure\\Infrastructure.csproj|c:\\users\\facus\\onedrive\\escritorio\\paginabrian\\back\\proyecto-braian\\infrastructure\\data\\ordermessagerepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{964F6C74-E843-47A0-AF0E-2A4282F4DEF6}|Infrastructure\\Infrastructure.csproj|solutionrelative:infrastructure\\data\\ordermessagerepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{97BDB8F1-18F7-4FE3-87CD-C7172A4649B2}|Application\\Application.csproj|c:\\users\\facus\\onedrive\\escritorio\\paginabrian\\back\\proyecto-braian\\application\\services\\orderservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{97BDB8F1-18F7-4FE3-87CD-C7172A4649B2}|Application\\Application.csproj|solutionrelative:application\\services\\orderservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{18A434D4-4D83-49DA-85C9-5D98DE865D1E}|Proyecto Braian\\Web.csproj|c:\\users\\facus\\onedrive\\escritorio\\paginabrian\\back\\proyecto-braian\\proyecto braian\\controllers\\ordercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{18A434D4-4D83-49DA-85C9-5D98DE865D1E}|Proyecto Braian\\Web.csproj|solutionrelative:proyecto braian\\controllers\\ordercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{97BDB8F1-18F7-4FE3-87CD-C7172A4649B2}|Application\\Application.csproj|c:\\users\\facus\\onedrive\\escritorio\\paginabrian\\back\\proyecto-braian\\application\\models\\request\\orderrequest.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{97BDB8F1-18F7-4FE3-87CD-C7172A4649B2}|Application\\Application.csproj|solutionrelative:application\\models\\request\\orderrequest.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{97BDB8F1-18F7-4FE3-87CD-C7172A4649B2}|Application\\Application.csproj|c:\\users\\facus\\onedrive\\escritorio\\paginabrian\\back\\proyecto-braian\\application\\models\\request\\detallefacturacionrequest.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{97BDB8F1-18F7-4FE3-87CD-C7172A4649B2}|Application\\Application.csproj|solutionrelative:application\\models\\request\\detallefacturacionrequest.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{97BDB8F1-18F7-4FE3-87CD-C7172A4649B2}|Application\\Application.csproj|c:\\users\\facus\\onedrive\\escritorio\\paginabrian\\back\\proyecto-braian\\application\\mappings\\detallefacturaciondto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{97BDB8F1-18F7-4FE3-87CD-C7172A4649B2}|Application\\Application.csproj|solutionrelative:application\\mappings\\detallefacturaciondto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{97BDB8F1-18F7-4FE3-87CD-C7172A4649B2}|Application\\Application.csproj|c:\\users\\facus\\onedrive\\escritorio\\paginabrian\\back\\proyecto-braian\\application\\mappings\\orderdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{97BDB8F1-18F7-4FE3-87CD-C7172A4649B2}|Application\\Application.csproj|solutionrelative:application\\mappings\\orderdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{97BDB8F1-18F7-4FE3-87CD-C7172A4649B2}|Application\\Application.csproj|c:\\users\\facus\\onedrive\\escritorio\\paginabrian\\back\\proyecto-braian\\application\\interfaces\\iorderservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{97BDB8F1-18F7-4FE3-87CD-C7172A4649B2}|Application\\Application.csproj|solutionrelative:application\\interfaces\\iorderservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{964F6C74-E843-47A0-AF0E-2A4282F4DEF6}|Infrastructure\\Infrastructure.csproj|c:\\users\\facus\\onedrive\\escritorio\\paginabrian\\back\\proyecto-braian\\infrastructure\\data\\orderrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{964F6C74-E843-47A0-AF0E-2A4282F4DEF6}|Infrastructure\\Infrastructure.csproj|solutionrelative:infrastructure\\data\\orderrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{97BDB8F1-18F7-4FE3-87CD-C7172A4649B2}|Application\\Application.csproj|c:\\users\\facus\\onedrive\\escritorio\\paginabrian\\back\\proyecto-braian\\application\\models\\response\\detallefacturacionresponse.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{97BDB8F1-18F7-4FE3-87CD-C7172A4649B2}|Application\\Application.csproj|solutionrelative:application\\models\\response\\detallefacturacionresponse.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{964F6C74-E843-47A0-AF0E-2A4282F4DEF6}|Infrastructure\\Infrastructure.csproj|c:\\users\\facus\\onedrive\\escritorio\\paginabrian\\back\\proyecto-braian\\infrastructure\\data\\productrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{964F6C74-E843-47A0-AF0E-2A4282F4DEF6}|Infrastructure\\Infrastructure.csproj|solutionrelative:infrastructure\\data\\productrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{2DD042C6-30C6-4455-BB3E-15D6D0B13A31}|Domain\\Domain.csproj|c:\\users\\facus\\onedrive\\escritorio\\paginabrian\\back\\proyecto-braian\\domain\\interfaces\\iorderrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{2DD042C6-30C6-4455-BB3E-15D6D0B13A31}|Domain\\Domain.csproj|solutionrelative:domain\\interfaces\\iorderrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{2DD042C6-30C6-4455-BB3E-15D6D0B13A31}|Domain\\Domain.csproj|c:\\users\\facus\\onedrive\\escritorio\\paginabrian\\back\\proyecto-braian\\domain\\entities\\detallefacturacion.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{2DD042C6-30C6-4455-BB3E-15D6D0B13A31}|Domain\\Domain.csproj|solutionrelative:domain\\entities\\detallefacturacion.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{97BDB8F1-18F7-4FE3-87CD-C7172A4649B2}|Application\\Application.csproj|c:\\users\\facus\\onedrive\\escritorio\\paginabrian\\back\\proyecto-braian\\application\\models\\response\\orderresponse.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{97BDB8F1-18F7-4FE3-87CD-C7172A4649B2}|Application\\Application.csproj|solutionrelative:application\\models\\response\\orderresponse.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{964F6C74-E843-47A0-AF0E-2A4282F4DEF6}|Infrastructure\\Infrastructure.csproj|c:\\users\\facus\\onedrive\\escritorio\\paginabrian\\back\\proyecto-braian\\infrastructure\\migrations\\20251212200234_detalle_facturacion.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{964F6C74-E843-47A0-AF0E-2A4282F4DEF6}|Infrastructure\\Infrastructure.csproj|solutionrelative:infrastructure\\migrations\\20251212200234_detalle_facturacion.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{97BDB8F1-18F7-4FE3-87CD-C7172A4649B2}|Application\\Application.csproj|c:\\users\\facus\\onedrive\\escritorio\\paginabrian\\back\\proyecto-braian\\application\\mappings\\ordermessagedto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{97BDB8F1-18F7-4FE3-87CD-C7172A4649B2}|Application\\Application.csproj|solutionrelative:application\\mappings\\ordermessagedto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{97BDB8F1-18F7-4FE3-87CD-C7172A4649B2}|Application\\Application.csproj|c:\\users\\facus\\onedrive\\escritorio\\paginabrian\\back\\proyecto-braian\\application\\mappings\\categorydto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{97BDB8F1-18F7-4FE3-87CD-C7172A4649B2}|Application\\Application.csproj|solutionrelative:application\\mappings\\categorydto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{2DD042C6-30C6-4455-BB3E-15D6D0B13A31}|Domain\\Domain.csproj|c:\\users\\facus\\onedrive\\escritorio\\paginabrian\\back\\proyecto-braian\\domain\\entities\\order.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{2DD042C6-30C6-4455-BB3E-15D6D0B13A31}|Domain\\Domain.csproj|solutionrelative:domain\\entities\\order.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{964F6C74-E843-47A0-AF0E-2A4282F4DEF6}|Infrastructure\\Infrastructure.csproj|c:\\users\\facus\\onedrive\\escritorio\\paginabrian\\back\\proyecto-braian\\infrastructure\\context\\databasecontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{964F6C74-E843-47A0-AF0E-2A4282F4DEF6}|Infrastructure\\Infrastructure.csproj|solutionrelative:infrastructure\\context\\databasecontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{964F6C74-E843-47A0-AF0E-2A4282F4DEF6}|Infrastructure\\Infrastructure.csproj|c:\\users\\facus\\onedrive\\escritorio\\paginabrian\\back\\proyecto-braian\\infrastructure\\data\\ordermessagerepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{964F6C74-E843-47A0-AF0E-2A4282F4DEF6}|Infrastructure\\Infrastructure.csproj|solutionrelative:infrastructure\\data\\ordermessagerepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{97BDB8F1-18F7-4FE3-87CD-C7172A4649B2}|Application\\Application.csproj|c:\\users\\facus\\onedrive\\escritorio\\paginabrian\\back\\proyecto-braian\\application\\services\\ordermessageservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -17,38 +85,6 @@
     {
       "AbsoluteMoniker": "D:0:0:{18A434D4-4D83-49DA-85C9-5D98DE865D1E}|Proyecto Braian\\Web.csproj|c:\\users\\facus\\onedrive\\escritorio\\paginabrian\\back\\proyecto-braian\\proyecto braian\\controllers\\ordermessagecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{18A434D4-4D83-49DA-85C9-5D98DE865D1E}|Proyecto Braian\\Web.csproj|solutionrelative:proyecto braian\\controllers\\ordermessagecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{18A434D4-4D83-49DA-85C9-5D98DE865D1E}|Proyecto Braian\\Web.csproj|c:\\users\\facus\\onedrive\\escritorio\\paginabrian\\back\\proyecto-braian\\proyecto braian\\controllers\\ordercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{18A434D4-4D83-49DA-85C9-5D98DE865D1E}|Proyecto Braian\\Web.csproj|solutionrelative:proyecto braian\\controllers\\ordercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{97BDB8F1-18F7-4FE3-87CD-C7172A4649B2}|Application\\Application.csproj|c:\\users\\facus\\onedrive\\escritorio\\paginabrian\\back\\proyecto-braian\\application\\interfaces\\iorderservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{97BDB8F1-18F7-4FE3-87CD-C7172A4649B2}|Application\\Application.csproj|solutionrelative:application\\interfaces\\iorderservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{97BDB8F1-18F7-4FE3-87CD-C7172A4649B2}|Application\\Application.csproj|c:\\users\\facus\\onedrive\\escritorio\\paginabrian\\back\\proyecto-braian\\application\\services\\orderservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{97BDB8F1-18F7-4FE3-87CD-C7172A4649B2}|Application\\Application.csproj|solutionrelative:application\\services\\orderservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{2DD042C6-30C6-4455-BB3E-15D6D0B13A31}|Domain\\Domain.csproj|c:\\users\\facus\\onedrive\\escritorio\\paginabrian\\back\\proyecto-braian\\domain\\interfaces\\iorderrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{2DD042C6-30C6-4455-BB3E-15D6D0B13A31}|Domain\\Domain.csproj|solutionrelative:domain\\interfaces\\iorderrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{97BDB8F1-18F7-4FE3-87CD-C7172A4649B2}|Application\\Application.csproj|c:\\users\\facus\\onedrive\\escritorio\\paginabrian\\back\\proyecto-braian\\application\\mappings\\orderdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{97BDB8F1-18F7-4FE3-87CD-C7172A4649B2}|Application\\Application.csproj|solutionrelative:application\\mappings\\orderdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{97BDB8F1-18F7-4FE3-87CD-C7172A4649B2}|Application\\Application.csproj|c:\\users\\facus\\onedrive\\escritorio\\paginabrian\\back\\proyecto-braian\\application\\mappings\\ordermessagedto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{97BDB8F1-18F7-4FE3-87CD-C7172A4649B2}|Application\\Application.csproj|solutionrelative:application\\mappings\\ordermessagedto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{2DD042C6-30C6-4455-BB3E-15D6D0B13A31}|Domain\\Domain.csproj|c:\\users\\facus\\onedrive\\escritorio\\paginabrian\\back\\proyecto-braian\\domain\\entities\\order.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{2DD042C6-30C6-4455-BB3E-15D6D0B13A31}|Domain\\Domain.csproj|solutionrelative:domain\\entities\\order.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{964F6C74-E843-47A0-AF0E-2A4282F4DEF6}|Infrastructure\\Infrastructure.csproj|c:\\users\\facus\\onedrive\\escritorio\\paginabrian\\back\\proyecto-braian\\infrastructure\\data\\productrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{964F6C74-E843-47A0-AF0E-2A4282F4DEF6}|Infrastructure\\Infrastructure.csproj|solutionrelative:infrastructure\\data\\productrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{97BDB8F1-18F7-4FE3-87CD-C7172A4649B2}|Application\\Application.csproj|c:\\users\\facus\\onedrive\\escritorio\\paginabrian\\back\\proyecto-braian\\application\\services\\productservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -103,10 +139,6 @@
       "RelativeMoniker": "D:0:0:{97BDB8F1-18F7-4FE3-87CD-C7172A4649B2}|Application\\Application.csproj|solutionrelative:application\\models\\response\\categoryresponse.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{97BDB8F1-18F7-4FE3-87CD-C7172A4649B2}|Application\\Application.csproj|c:\\users\\facus\\onedrive\\escritorio\\paginabrian\\back\\proyecto-braian\\application\\mappings\\categorydto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{97BDB8F1-18F7-4FE3-87CD-C7172A4649B2}|Application\\Application.csproj|solutionrelative:application\\mappings\\categorydto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{97BDB8F1-18F7-4FE3-87CD-C7172A4649B2}|Application\\Application.csproj|c:\\users\\facus\\onedrive\\escritorio\\paginabrian\\back\\proyecto-braian\\application\\interfaces\\iproductservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{97BDB8F1-18F7-4FE3-87CD-C7172A4649B2}|Application\\Application.csproj|solutionrelative:application\\interfaces\\iproductservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
@@ -129,10 +161,6 @@
     {
       "AbsoluteMoniker": "D:0:0:{2DD042C6-30C6-4455-BB3E-15D6D0B13A31}|Domain\\Domain.csproj|c:\\users\\facus\\onedrive\\escritorio\\paginabrian\\back\\proyecto-braian\\domain\\interfaces\\icategoryrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{2DD042C6-30C6-4455-BB3E-15D6D0B13A31}|Domain\\Domain.csproj|solutionrelative:domain\\interfaces\\icategoryrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{964F6C74-E843-47A0-AF0E-2A4282F4DEF6}|Infrastructure\\Infrastructure.csproj|c:\\users\\facus\\onedrive\\escritorio\\paginabrian\\back\\proyecto-braian\\infrastructure\\context\\databasecontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{964F6C74-E843-47A0-AF0E-2A4282F4DEF6}|Infrastructure\\Infrastructure.csproj|solutionrelative:infrastructure\\context\\databasecontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{2DD042C6-30C6-4455-BB3E-15D6D0B13A31}|Domain\\Domain.csproj|c:\\users\\facus\\onedrive\\escritorio\\paginabrian\\back\\proyecto-braian\\domain\\entities\\productsize.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -194,11 +222,11 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 6,
+          "SelectedChildIndex": 4,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 31,
+              "DocumentIndex": 39,
               "Title": "ICategoryRepository.cs",
               "DocumentMoniker": "C:\\Users\\facus\\OneDrive\\Escritorio\\PaginaBrian\\Back\\Proyecto-Braian\\Domain\\Interfaces\\ICategoryRepository.cs",
               "RelativeDocumentMoniker": "Domain\\Interfaces\\ICategoryRepository.cs",
@@ -211,11 +239,11 @@
             },
             {
               "$type": "Bookmark",
-              "Name": "ST:0:0:{34e76e81-ee4a-11d0-ae2e-00a0c90fffc3}"
+              "Name": "ST:0:0:{d78612c7-9962-4b83-95d9-268046dad23a}"
             },
             {
               "$type": "Bookmark",
-              "Name": "ST:0:0:{d78612c7-9962-4b83-95d9-268046dad23a}"
+              "Name": "ST:0:0:{34e76e81-ee4a-11d0-ae2e-00a0c90fffc3}"
             },
             {
               "$type": "Bookmark",
@@ -223,85 +251,137 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 0,
+              "Title": "OrderService.cs",
+              "DocumentMoniker": "C:\\Users\\facus\\OneDrive\\Escritorio\\PaginaBrian\\Back\\Proyecto-Braian\\Application\\Services\\OrderService.cs",
+              "RelativeDocumentMoniker": "Application\\Services\\OrderService.cs",
+              "ToolTip": "C:\\Users\\facus\\OneDrive\\Escritorio\\PaginaBrian\\Back\\Proyecto-Braian\\Application\\Services\\OrderService.cs",
+              "RelativeToolTip": "Application\\Services\\OrderService.cs",
+              "ViewState": "AQIAANoAAAAAAAAAAAAuwPAAAAANAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-23T06:35:28.416Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
               "Title": "OrderController.cs",
               "DocumentMoniker": "C:\\Users\\facus\\OneDrive\\Escritorio\\PaginaBrian\\Back\\Proyecto-Braian\\Proyecto Braian\\Controllers\\OrderController.cs",
               "RelativeDocumentMoniker": "Proyecto Braian\\Controllers\\OrderController.cs",
               "ToolTip": "C:\\Users\\facus\\OneDrive\\Escritorio\\PaginaBrian\\Back\\Proyecto-Braian\\Proyecto Braian\\Controllers\\OrderController.cs",
               "RelativeToolTip": "Proyecto Braian\\Controllers\\OrderController.cs",
-              "ViewState": "AQIAABoAAAAAAAAAAAAiwEQAAAAZAAAA",
+              "ViewState": "AQIAAIcAAAAAAAAAAAAQwJ4AAAAoAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-12-01T21:30:48.706Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 10,
-              "Title": "Order.cs",
-              "DocumentMoniker": "C:\\Users\\facus\\OneDrive\\Escritorio\\PaginaBrian\\Back\\Proyecto-Braian\\Domain\\Entities\\Order.cs",
-              "RelativeDocumentMoniker": "Domain\\Entities\\Order.cs",
-              "ToolTip": "C:\\Users\\facus\\OneDrive\\Escritorio\\PaginaBrian\\Back\\Proyecto-Braian\\Domain\\Entities\\Order.cs",
-              "RelativeToolTip": "Domain\\Entities\\Order.cs",
+              "DocumentIndex": 5,
+              "Title": "OrderDTO.cs",
+              "DocumentMoniker": "C:\\Users\\facus\\OneDrive\\Escritorio\\PaginaBrian\\Back\\Proyecto-Braian\\Application\\Mappings\\OrderDTO.cs",
+              "RelativeDocumentMoniker": "Application\\Mappings\\OrderDTO.cs",
+              "ToolTip": "C:\\Users\\facus\\OneDrive\\Escritorio\\PaginaBrian\\Back\\Proyecto-Braian\\Application\\Mappings\\OrderDTO.cs",
+              "RelativeToolTip": "Application\\Mappings\\OrderDTO.cs",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-11-23T16:24:44.929Z",
+              "WhenOpened": "2025-12-12T01:00:15.149Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "OrderMessageRepository.cs",
-              "DocumentMoniker": "C:\\Users\\facus\\OneDrive\\Escritorio\\PaginaBrian\\Back\\Proyecto-Braian\\Infrastructure\\Data\\OrderMessageRepository.cs",
-              "RelativeDocumentMoniker": "Infrastructure\\Data\\OrderMessageRepository.cs",
-              "ToolTip": "C:\\Users\\facus\\OneDrive\\Escritorio\\PaginaBrian\\Back\\Proyecto-Braian\\Infrastructure\\Data\\OrderMessageRepository.cs",
-              "RelativeToolTip": "Infrastructure\\Data\\OrderMessageRepository.cs",
-              "ViewState": "AQIAACkAAAAAAAAAAAAwwEUAAAAYAAAA",
+              "DocumentIndex": 4,
+              "Title": "DetalleFacturacionDTO.cs",
+              "DocumentMoniker": "C:\\Users\\facus\\OneDrive\\Escritorio\\PaginaBrian\\Back\\Proyecto-Braian\\Application\\Mappings\\DetalleFacturacionDTO.cs",
+              "RelativeDocumentMoniker": "Application\\Mappings\\DetalleFacturacionDTO.cs",
+              "ToolTip": "C:\\Users\\facus\\OneDrive\\Escritorio\\PaginaBrian\\Back\\Proyecto-Braian\\Application\\Mappings\\DetalleFacturacionDTO.cs",
+              "RelativeToolTip": "Application\\Mappings\\DetalleFacturacionDTO.cs",
+              "ViewState": "AQIAAA4AAAAAAAAAAAAQwBEAAAApAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-11-23T16:29:57.446Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "OrderMessageController.cs",
-              "DocumentMoniker": "C:\\Users\\facus\\OneDrive\\Escritorio\\PaginaBrian\\Back\\Proyecto-Braian\\Proyecto Braian\\Controllers\\OrderMessageController.cs",
-              "RelativeDocumentMoniker": "Proyecto Braian\\Controllers\\OrderMessageController.cs",
-              "ToolTip": "C:\\Users\\facus\\OneDrive\\Escritorio\\PaginaBrian\\Back\\Proyecto-Braian\\Proyecto Braian\\Controllers\\OrderMessageController.cs",
-              "RelativeToolTip": "Proyecto Braian\\Controllers\\OrderMessageController.cs",
-              "ViewState": "AQIAADEAAAAAAAAAAAAcwFIAAAAAAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-11-23T17:08:13.23Z",
+              "WhenOpened": "2025-12-12T19:25:16.866Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 2,
-              "Title": "OrderMessageService.cs",
-              "DocumentMoniker": "C:\\Users\\facus\\OneDrive\\Escritorio\\PaginaBrian\\Back\\Proyecto-Braian\\Application\\Services\\OrderMessageService.cs",
-              "RelativeDocumentMoniker": "Application\\Services\\OrderMessageService.cs",
-              "ToolTip": "C:\\Users\\facus\\OneDrive\\Escritorio\\PaginaBrian\\Back\\Proyecto-Braian\\Application\\Services\\OrderMessageService.cs",
-              "RelativeToolTip": "Application\\Services\\OrderMessageService.cs",
-              "ViewState": "AQIAAGAAAAAAAAAAAAAiwHUAAAA4AAAA",
+              "Title": "OrderRequest.cs",
+              "DocumentMoniker": "C:\\Users\\facus\\OneDrive\\Escritorio\\PaginaBrian\\Back\\Proyecto-Braian\\Application\\Models\\Request\\OrderRequest.cs",
+              "RelativeDocumentMoniker": "Application\\Models\\Request\\OrderRequest.cs",
+              "ToolTip": "C:\\Users\\facus\\OneDrive\\Escritorio\\PaginaBrian\\Back\\Proyecto-Braian\\Application\\Models\\Request\\OrderRequest.cs",
+              "RelativeToolTip": "Application\\Models\\Request\\OrderRequest.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-11-23T16:26:35.16Z",
+              "WhenOpened": "2025-12-12T19:17:49.298Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 3,
+              "Title": "DetalleFacturacionRequest.cs",
+              "DocumentMoniker": "C:\\Users\\facus\\OneDrive\\Escritorio\\PaginaBrian\\Back\\Proyecto-Braian\\Application\\Models\\Request\\DetalleFacturacionRequest.cs",
+              "RelativeDocumentMoniker": "Application\\Models\\Request\\DetalleFacturacionRequest.cs",
+              "ToolTip": "C:\\Users\\facus\\OneDrive\\Escritorio\\PaginaBrian\\Back\\Proyecto-Braian\\Application\\Models\\Request\\DetalleFacturacionRequest.cs",
+              "RelativeToolTip": "Application\\Models\\Request\\DetalleFacturacionRequest.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-12-12T19:21:26.487Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "DetalleFacturacionResponse.cs",
+              "DocumentMoniker": "C:\\Users\\facus\\OneDrive\\Escritorio\\PaginaBrian\\Back\\Proyecto-Braian\\Application\\Models\\Response\\DetalleFacturacionResponse.cs",
+              "RelativeDocumentMoniker": "Application\\Models\\Response\\DetalleFacturacionResponse.cs",
+              "ToolTip": "C:\\Users\\facus\\OneDrive\\Escritorio\\PaginaBrian\\Back\\Proyecto-Braian\\Application\\Models\\Response\\DetalleFacturacionResponse.cs",
+              "RelativeToolTip": "Application\\Models\\Response\\DetalleFacturacionResponse.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAoAAAAVAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-12-12T19:23:49.057Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "IOrderService.cs",
+              "DocumentMoniker": "C:\\Users\\facus\\OneDrive\\Escritorio\\PaginaBrian\\Back\\Proyecto-Braian\\Application\\Interfaces\\IOrderService.cs",
+              "RelativeDocumentMoniker": "Application\\Interfaces\\IOrderService.cs",
+              "ToolTip": "C:\\Users\\facus\\OneDrive\\Escritorio\\PaginaBrian\\Back\\Proyecto-Braian\\Application\\Interfaces\\IOrderService.cs",
+              "RelativeToolTip": "Application\\Interfaces\\IOrderService.cs",
+              "ViewState": "AQIAABcAAAAAAAAAAAAIwCoAAAB6AAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-12-01T21:30:33.747Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
+              "Title": "ProductRepository.cs",
+              "DocumentMoniker": "C:\\Users\\facus\\OneDrive\\Escritorio\\PaginaBrian\\Back\\Proyecto-Braian\\Infrastructure\\Data\\ProductRepository.cs",
+              "RelativeDocumentMoniker": "Infrastructure\\Data\\ProductRepository.cs",
+              "ToolTip": "C:\\Users\\facus\\OneDrive\\Escritorio\\PaginaBrian\\Back\\Proyecto-Braian\\Infrastructure\\Data\\ProductRepository.cs",
+              "RelativeToolTip": "Infrastructure\\Data\\ProductRepository.cs",
+              "ViewState": "AQIAAB4AAAAAAAAAAAAAAD4AAAA7AAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-27T21:02:50.346Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
               "Title": "OrderRepository.cs",
               "DocumentMoniker": "C:\\Users\\facus\\OneDrive\\Escritorio\\PaginaBrian\\Back\\Proyecto-Braian\\Infrastructure\\Data\\OrderRepository.cs",
               "RelativeDocumentMoniker": "Infrastructure\\Data\\OrderRepository.cs",
               "ToolTip": "C:\\Users\\facus\\OneDrive\\Escritorio\\PaginaBrian\\Back\\Proyecto-Braian\\Infrastructure\\Data\\OrderRepository.cs",
               "RelativeToolTip": "Infrastructure\\Data\\OrderRepository.cs",
-              "ViewState": "AQIAACsAAAAAAAAAAAAUwD0AAAAgAAAA",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-12-01T21:29:11.348Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 7,
+              "DocumentIndex": 10,
               "Title": "IOrderRepository.cs",
               "DocumentMoniker": "C:\\Users\\facus\\OneDrive\\Escritorio\\PaginaBrian\\Back\\Proyecto-Braian\\Domain\\Interfaces\\IOrderRepository.cs",
               "RelativeDocumentMoniker": "Domain\\Interfaces\\IOrderRepository.cs",
@@ -314,71 +394,135 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 5,
-              "Title": "IOrderService.cs",
-              "DocumentMoniker": "C:\\Users\\facus\\OneDrive\\Escritorio\\PaginaBrian\\Back\\Proyecto-Braian\\Application\\Interfaces\\IOrderService.cs",
-              "RelativeDocumentMoniker": "Application\\Interfaces\\IOrderService.cs",
-              "ToolTip": "C:\\Users\\facus\\OneDrive\\Escritorio\\PaginaBrian\\Back\\Proyecto-Braian\\Application\\Interfaces\\IOrderService.cs",
-              "RelativeToolTip": "Application\\Interfaces\\IOrderService.cs",
-              "ViewState": "AQIAAAYAAAAAAAAAAAAAABsAAAAnAAAA",
+              "DocumentIndex": 11,
+              "Title": "DetalleFacturacion.cs",
+              "DocumentMoniker": "C:\\Users\\facus\\OneDrive\\Escritorio\\PaginaBrian\\Back\\Proyecto-Braian\\Domain\\Entities\\DetalleFacturacion.cs",
+              "RelativeDocumentMoniker": "Domain\\Entities\\DetalleFacturacion.cs",
+              "ToolTip": "C:\\Users\\facus\\OneDrive\\Escritorio\\PaginaBrian\\Back\\Proyecto-Braian\\Domain\\Entities\\DetalleFacturacion.cs",
+              "RelativeToolTip": "Domain\\Entities\\DetalleFacturacion.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-12-01T21:30:33.747Z",
+              "WhenOpened": "2025-12-12T19:13:13.734Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 6,
-              "Title": "OrderService.cs",
-              "DocumentMoniker": "C:\\Users\\facus\\OneDrive\\Escritorio\\PaginaBrian\\Back\\Proyecto-Braian\\Application\\Services\\OrderService.cs",
-              "RelativeDocumentMoniker": "Application\\Services\\OrderService.cs",
-              "ToolTip": "C:\\Users\\facus\\OneDrive\\Escritorio\\PaginaBrian\\Back\\Proyecto-Braian\\Application\\Services\\OrderService.cs",
-              "RelativeToolTip": "Application\\Services\\OrderService.cs",
-              "ViewState": "AQIAADAAAAAAAAAAAAA6wEQAAAAPAAAA",
+              "DocumentIndex": 12,
+              "Title": "OrderResponse.cs",
+              "DocumentMoniker": "C:\\Users\\facus\\OneDrive\\Escritorio\\PaginaBrian\\Back\\Proyecto-Braian\\Application\\Models\\Response\\OrderResponse.cs",
+              "RelativeDocumentMoniker": "Application\\Models\\Response\\OrderResponse.cs",
+              "ToolTip": "C:\\Users\\facus\\OneDrive\\Escritorio\\PaginaBrian\\Back\\Proyecto-Braian\\Application\\Models\\Response\\OrderResponse.cs",
+              "RelativeToolTip": "Application\\Models\\Response\\OrderResponse.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-11-23T06:35:28.416Z",
+              "WhenOpened": "2025-12-12T19:35:44.302Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 8,
-              "Title": "OrderDTO.cs",
-              "DocumentMoniker": "C:\\Users\\facus\\OneDrive\\Escritorio\\PaginaBrian\\Back\\Proyecto-Braian\\Application\\Mappings\\OrderDTO.cs",
-              "RelativeDocumentMoniker": "Application\\Mappings\\OrderDTO.cs",
-              "ToolTip": "C:\\Users\\facus\\OneDrive\\Escritorio\\PaginaBrian\\Back\\Proyecto-Braian\\Application\\Mappings\\OrderDTO.cs",
-              "RelativeToolTip": "Application\\Mappings\\OrderDTO.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAABEAAAAIAAAA",
+              "DocumentIndex": 13,
+              "Title": "20251212200234_Detalle_Facturacion.cs",
+              "DocumentMoniker": "C:\\Users\\facus\\OneDrive\\Escritorio\\PaginaBrian\\Back\\Proyecto-Braian\\Infrastructure\\Migrations\\20251212200234_Detalle_Facturacion.cs",
+              "RelativeDocumentMoniker": "Infrastructure\\Migrations\\20251212200234_Detalle_Facturacion.cs",
+              "ToolTip": "C:\\Users\\facus\\OneDrive\\Escritorio\\PaginaBrian\\Back\\Proyecto-Braian\\Infrastructure\\Migrations\\20251212200234_Detalle_Facturacion.cs",
+              "RelativeToolTip": "Infrastructure\\Migrations\\20251212200234_Detalle_Facturacion.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-12-12T01:00:15.149Z",
+              "WhenOpened": "2025-12-12T20:02:35.215Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 9,
+              "DocumentIndex": 14,
               "Title": "OrderMessageDTO.cs",
               "DocumentMoniker": "C:\\Users\\facus\\OneDrive\\Escritorio\\PaginaBrian\\Back\\Proyecto-Braian\\Application\\Mappings\\OrderMessageDTO.cs",
               "RelativeDocumentMoniker": "Application\\Mappings\\OrderMessageDTO.cs",
               "ToolTip": "C:\\Users\\facus\\OneDrive\\Escritorio\\PaginaBrian\\Back\\Proyecto-Braian\\Application\\Mappings\\OrderMessageDTO.cs",
               "RelativeToolTip": "Application\\Mappings\\OrderMessageDTO.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAACoAAAAAAAAA",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAgAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-11-23T16:40:08.745Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 11,
-              "Title": "ProductRepository.cs",
-              "DocumentMoniker": "C:\\Users\\facus\\OneDrive\\Escritorio\\PaginaBrian\\Back\\Proyecto-Braian\\Infrastructure\\Data\\ProductRepository.cs",
-              "RelativeDocumentMoniker": "Infrastructure\\Data\\ProductRepository.cs",
-              "ToolTip": "C:\\Users\\facus\\OneDrive\\Escritorio\\PaginaBrian\\Back\\Proyecto-Braian\\Infrastructure\\Data\\ProductRepository.cs",
-              "RelativeToolTip": "Infrastructure\\Data\\ProductRepository.cs",
-              "ViewState": "AQIAAB4AAAAAAAAAAAAAAD4AAAA7AAAA",
+              "DocumentIndex": 15,
+              "Title": "CategoryDTO.cs",
+              "DocumentMoniker": "C:\\Users\\facus\\OneDrive\\Escritorio\\PaginaBrian\\Back\\Proyecto-Braian\\Application\\Mappings\\CategoryDTO.cs",
+              "RelativeDocumentMoniker": "Application\\Mappings\\CategoryDTO.cs",
+              "ToolTip": "C:\\Users\\facus\\OneDrive\\Escritorio\\PaginaBrian\\Back\\Proyecto-Braian\\Application\\Mappings\\CategoryDTO.cs",
+              "RelativeToolTip": "Application\\Mappings\\CategoryDTO.cs",
+              "ViewState": "AQIAAAEAAAAAAAAAAAAQwBcAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-11-27T21:02:50.346Z"
+              "WhenOpened": "2025-11-26T20:32:35.869Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 12,
+              "DocumentIndex": 16,
+              "Title": "Order.cs",
+              "DocumentMoniker": "C:\\Users\\facus\\OneDrive\\Escritorio\\PaginaBrian\\Back\\Proyecto-Braian\\Domain\\Entities\\Order.cs",
+              "RelativeDocumentMoniker": "Domain\\Entities\\Order.cs",
+              "ToolTip": "C:\\Users\\facus\\OneDrive\\Escritorio\\PaginaBrian\\Back\\Proyecto-Braian\\Domain\\Entities\\Order.cs",
+              "RelativeToolTip": "Domain\\Entities\\Order.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAABYAAABCAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-23T16:24:44.929Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 19,
+              "Title": "OrderMessageService.cs",
+              "DocumentMoniker": "C:\\Users\\facus\\OneDrive\\Escritorio\\PaginaBrian\\Back\\Proyecto-Braian\\Application\\Services\\OrderMessageService.cs",
+              "RelativeDocumentMoniker": "Application\\Services\\OrderMessageService.cs",
+              "ToolTip": "C:\\Users\\facus\\OneDrive\\Escritorio\\PaginaBrian\\Back\\Proyecto-Braian\\Application\\Services\\OrderMessageService.cs",
+              "RelativeToolTip": "Application\\Services\\OrderMessageService.cs",
+              "ViewState": "AQIAAGAAAAAAAAAAAAAiwHUAAAA4AAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-23T16:26:35.16Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 20,
+              "Title": "OrderMessageController.cs",
+              "DocumentMoniker": "C:\\Users\\facus\\OneDrive\\Escritorio\\PaginaBrian\\Back\\Proyecto-Braian\\Proyecto Braian\\Controllers\\OrderMessageController.cs",
+              "RelativeDocumentMoniker": "Proyecto Braian\\Controllers\\OrderMessageController.cs",
+              "ToolTip": "C:\\Users\\facus\\OneDrive\\Escritorio\\PaginaBrian\\Back\\Proyecto-Braian\\Proyecto Braian\\Controllers\\OrderMessageController.cs",
+              "RelativeToolTip": "Proyecto Braian\\Controllers\\OrderMessageController.cs",
+              "ViewState": "AQIAADEAAAAAAAAAAAAcwFIAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-23T17:08:13.23Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 17,
+              "Title": "DataBaseContext.cs",
+              "DocumentMoniker": "C:\\Users\\facus\\OneDrive\\Escritorio\\PaginaBrian\\Back\\Proyecto-Braian\\Infrastructure\\Context\\DataBaseContext.cs",
+              "RelativeDocumentMoniker": "Infrastructure\\Context\\DataBaseContext.cs",
+              "ToolTip": "C:\\Users\\facus\\OneDrive\\Escritorio\\PaginaBrian\\Back\\Proyecto-Braian\\Infrastructure\\Context\\DataBaseContext.cs",
+              "RelativeToolTip": "Infrastructure\\Context\\DataBaseContext.cs",
+              "ViewState": "AQIAABcAAAAAAAAAAAA7wEoAAAAQAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-23T16:26:48.591Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 18,
+              "Title": "OrderMessageRepository.cs",
+              "DocumentMoniker": "C:\\Users\\facus\\OneDrive\\Escritorio\\PaginaBrian\\Back\\Proyecto-Braian\\Infrastructure\\Data\\OrderMessageRepository.cs",
+              "RelativeDocumentMoniker": "Infrastructure\\Data\\OrderMessageRepository.cs",
+              "ToolTip": "C:\\Users\\facus\\OneDrive\\Escritorio\\PaginaBrian\\Back\\Proyecto-Braian\\Infrastructure\\Data\\OrderMessageRepository.cs",
+              "RelativeToolTip": "Infrastructure\\Data\\OrderMessageRepository.cs",
+              "ViewState": "AQIAACoAAAAAAAAAAAAowEQAAAANAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-23T16:29:57.446Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 21,
               "Title": "ProductService.cs",
               "DocumentMoniker": "C:\\Users\\facus\\OneDrive\\Escritorio\\PaginaBrian\\Back\\Proyecto-Braian\\Application\\Services\\ProductService.cs",
               "RelativeDocumentMoniker": "Application\\Services\\ProductService.cs",
@@ -390,7 +534,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 13,
+              "DocumentIndex": 22,
               "Title": "IOrderMessageService.cs",
               "DocumentMoniker": "C:\\Users\\facus\\OneDrive\\Escritorio\\PaginaBrian\\Back\\Proyecto-Braian\\Application\\Interfaces\\IOrderMessageService.cs",
               "RelativeDocumentMoniker": "Application\\Interfaces\\IOrderMessageService.cs",
@@ -402,7 +546,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 14,
+              "DocumentIndex": 23,
               "Title": "IOrderMessageRepository.cs",
               "DocumentMoniker": "C:\\Users\\facus\\OneDrive\\Escritorio\\PaginaBrian\\Back\\Proyecto-Braian\\Domain\\Interfaces\\IOrderMessageRepository.cs",
               "RelativeDocumentMoniker": "Domain\\Interfaces\\IOrderMessageRepository.cs",
@@ -414,7 +558,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 15,
+              "DocumentIndex": 24,
               "Title": "OrderMessage.cs",
               "DocumentMoniker": "C:\\Users\\facus\\OneDrive\\Escritorio\\PaginaBrian\\Back\\Proyecto-Braian\\Domain\\Entities\\OrderMessage.cs",
               "RelativeDocumentMoniker": "Domain\\Entities\\OrderMessage.cs",
@@ -426,7 +570,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 17,
+              "DocumentIndex": 26,
               "Title": "ProductRequest.cs",
               "DocumentMoniker": "C:\\Users\\facus\\OneDrive\\Escritorio\\PaginaBrian\\Back\\Proyecto-Braian\\Application\\Models\\Request\\ProductRequest.cs",
               "RelativeDocumentMoniker": "Application\\Models\\Request\\ProductRequest.cs",
@@ -438,7 +582,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 16,
+              "DocumentIndex": 25,
               "Title": "ProductDTO.cs",
               "DocumentMoniker": "C:\\Users\\facus\\OneDrive\\Escritorio\\PaginaBrian\\Back\\Proyecto-Braian\\Application\\Mappings\\ProductDTO.cs",
               "RelativeDocumentMoniker": "Application\\Mappings\\ProductDTO.cs",
@@ -450,7 +594,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 18,
+              "DocumentIndex": 27,
               "Title": "CategoryRepository.cs",
               "DocumentMoniker": "C:\\Users\\facus\\OneDrive\\Escritorio\\PaginaBrian\\Back\\Proyecto-Braian\\Infrastructure\\Data\\CategoryRepository.cs",
               "RelativeDocumentMoniker": "Infrastructure\\Data\\CategoryRepository.cs",
@@ -462,7 +606,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 19,
+              "DocumentIndex": 28,
               "Title": "CategoryController.cs",
               "DocumentMoniker": "C:\\Users\\facus\\OneDrive\\Escritorio\\PaginaBrian\\Back\\Proyecto-Braian\\Proyecto Braian\\Controllers\\CategoryController.cs",
               "RelativeDocumentMoniker": "Proyecto Braian\\Controllers\\CategoryController.cs",
@@ -474,7 +618,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 20,
+              "DocumentIndex": 29,
               "Title": "CategoryRequest.cs",
               "DocumentMoniker": "C:\\Users\\facus\\OneDrive\\Escritorio\\PaginaBrian\\Back\\Proyecto-Braian\\Application\\Models\\Request\\CategoryRequest.cs",
               "RelativeDocumentMoniker": "Application\\Models\\Request\\CategoryRequest.cs",
@@ -486,7 +630,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 21,
+              "DocumentIndex": 30,
               "Title": "CategoryService.cs",
               "DocumentMoniker": "C:\\Users\\facus\\OneDrive\\Escritorio\\PaginaBrian\\Back\\Proyecto-Braian\\Application\\Services\\CategoryService.cs",
               "RelativeDocumentMoniker": "Application\\Services\\CategoryService.cs",
@@ -498,7 +642,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 22,
+              "DocumentIndex": 31,
               "Title": "ProductController.cs",
               "DocumentMoniker": "C:\\Users\\facus\\OneDrive\\Escritorio\\PaginaBrian\\Back\\Proyecto-Braian\\Proyecto Braian\\Controllers\\ProductController.cs",
               "RelativeDocumentMoniker": "Proyecto Braian\\Controllers\\ProductController.cs",
@@ -510,7 +654,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 23,
+              "DocumentIndex": 32,
               "Title": "Product.cs",
               "DocumentMoniker": "C:\\Users\\facus\\OneDrive\\Escritorio\\PaginaBrian\\Back\\Proyecto-Braian\\Domain\\Entities\\Product.cs",
               "RelativeDocumentMoniker": "Domain\\Entities\\Product.cs",
@@ -522,7 +666,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 24,
+              "DocumentIndex": 33,
               "Title": "CategoryResponse.cs",
               "DocumentMoniker": "C:\\Users\\facus\\OneDrive\\Escritorio\\PaginaBrian\\Back\\Proyecto-Braian\\Application\\Models\\Response\\CategoryResponse.cs",
               "RelativeDocumentMoniker": "Application\\Models\\Response\\CategoryResponse.cs",
@@ -534,7 +678,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 26,
+              "DocumentIndex": 34,
               "Title": "IProductService.cs",
               "DocumentMoniker": "C:\\Users\\facus\\OneDrive\\Escritorio\\PaginaBrian\\Back\\Proyecto-Braian\\Application\\Interfaces\\IProductService.cs",
               "RelativeDocumentMoniker": "Application\\Interfaces\\IProductService.cs",
@@ -546,19 +690,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 25,
-              "Title": "CategoryDTO.cs",
-              "DocumentMoniker": "C:\\Users\\facus\\OneDrive\\Escritorio\\PaginaBrian\\Back\\Proyecto-Braian\\Application\\Mappings\\CategoryDTO.cs",
-              "RelativeDocumentMoniker": "Application\\Mappings\\CategoryDTO.cs",
-              "ToolTip": "C:\\Users\\facus\\OneDrive\\Escritorio\\PaginaBrian\\Back\\Proyecto-Braian\\Application\\Mappings\\CategoryDTO.cs",
-              "RelativeToolTip": "Application\\Mappings\\CategoryDTO.cs",
-              "ViewState": "AQIAABQAAAAAAAAAAAAowBcAAAAAAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-11-26T20:32:35.869Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 27,
+              "DocumentIndex": 35,
               "Title": "IProductRepository.cs",
               "DocumentMoniker": "C:\\Users\\facus\\OneDrive\\Escritorio\\PaginaBrian\\Back\\Proyecto-Braian\\Domain\\Interfaces\\IProductRepository.cs",
               "RelativeDocumentMoniker": "Domain\\Interfaces\\IProductRepository.cs",
@@ -570,7 +702,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 28,
+              "DocumentIndex": 36,
               "Title": "ProductResponse.cs",
               "DocumentMoniker": "C:\\Users\\facus\\OneDrive\\Escritorio\\PaginaBrian\\Back\\Proyecto-Braian\\Application\\Models\\Response\\ProductResponse.cs",
               "RelativeDocumentMoniker": "Application\\Models\\Response\\ProductResponse.cs",
@@ -582,7 +714,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 29,
+              "DocumentIndex": 37,
               "Title": "20251206033732_SubCategories.cs",
               "DocumentMoniker": "C:\\Users\\facus\\OneDrive\\Escritorio\\PaginaBrian\\Back\\Proyecto-Braian\\Infrastructure\\Migrations\\20251206033732_SubCategories.cs",
               "RelativeDocumentMoniker": "Infrastructure\\Migrations\\20251206033732_SubCategories.cs",
@@ -594,7 +726,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 30,
+              "DocumentIndex": 38,
               "Title": "Category.cs",
               "DocumentMoniker": "C:\\Users\\facus\\OneDrive\\Escritorio\\PaginaBrian\\Back\\Proyecto-Braian\\Domain\\Entities\\Category.cs",
               "RelativeDocumentMoniker": "Domain\\Entities\\Category.cs",
@@ -606,19 +738,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 32,
-              "Title": "DataBaseContext.cs",
-              "DocumentMoniker": "C:\\Users\\facus\\OneDrive\\Escritorio\\PaginaBrian\\Back\\Proyecto-Braian\\Infrastructure\\Context\\DataBaseContext.cs",
-              "RelativeDocumentMoniker": "Infrastructure\\Context\\DataBaseContext.cs",
-              "ToolTip": "C:\\Users\\facus\\OneDrive\\Escritorio\\PaginaBrian\\Back\\Proyecto-Braian\\Infrastructure\\Context\\DataBaseContext.cs",
-              "RelativeToolTip": "Infrastructure\\Context\\DataBaseContext.cs",
-              "ViewState": "AQIAACAAAAAAAAAAAAAgwFoAAAABAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-11-23T16:26:48.591Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 44,
+              "DocumentIndex": 51,
               "Title": "20251202021401_Total Ventas.cs",
               "DocumentMoniker": "C:\\Users\\facus\\OneDrive\\Escritorio\\PaginaBrian\\Back\\Proyecto-Braian\\Infrastructure\\Migrations\\20251202021401_Total Ventas.cs",
               "RelativeDocumentMoniker": "Infrastructure\\Migrations\\20251202021401_Total Ventas.cs",
@@ -630,7 +750,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 33,
+              "DocumentIndex": 40,
               "Title": "ProductSize.cs",
               "DocumentMoniker": "C:\\Users\\facus\\OneDrive\\Escritorio\\PaginaBrian\\Back\\Proyecto-Braian\\Domain\\Entities\\ProductSize.cs",
               "RelativeDocumentMoniker": "Domain\\Entities\\ProductSize.cs",
@@ -642,7 +762,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 34,
+              "DocumentIndex": 41,
               "Title": "OrderItemResponse.cs",
               "DocumentMoniker": "C:\\Users\\facus\\OneDrive\\Escritorio\\PaginaBrian\\Back\\Proyecto-Braian\\Application\\Models\\Response\\OrderItemResponse.cs",
               "RelativeDocumentMoniker": "Application\\Models\\Response\\OrderItemResponse.cs",
@@ -654,7 +774,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 45,
+              "DocumentIndex": 52,
               "Title": "20251201203818_Paginado catalogo.cs",
               "DocumentMoniker": "C:\\Users\\facus\\OneDrive\\Escritorio\\PaginaBrian\\Back\\Proyecto-Braian\\Infrastructure\\Migrations\\20251201203818_Paginado catalogo.cs",
               "RelativeDocumentMoniker": "Infrastructure\\Migrations\\20251201203818_Paginado catalogo.cs",
@@ -666,7 +786,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 35,
+              "DocumentIndex": 42,
               "Title": "RepositoryCollectionExtension.cs",
               "DocumentMoniker": "C:\\Users\\facus\\OneDrive\\Escritorio\\PaginaBrian\\Back\\Proyecto-Braian\\Infrastructure\\Extensions\\RepositoryCollectionExtension.cs",
               "RelativeDocumentMoniker": "Infrastructure\\Extensions\\RepositoryCollectionExtension.cs",
@@ -678,7 +798,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 36,
+              "DocumentIndex": 43,
               "Title": "PagedResultResponse.cs",
               "DocumentMoniker": "C:\\Users\\facus\\OneDrive\\Escritorio\\PaginaBrian\\Back\\Proyecto-Braian\\Application\\Models\\Response\\PagedResultResponse.cs",
               "RelativeDocumentMoniker": "Application\\Models\\Response\\PagedResultResponse.cs",
@@ -690,7 +810,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 37,
+              "DocumentIndex": 44,
               "Title": "OrderMessageResponse.cs",
               "DocumentMoniker": "C:\\Users\\facus\\OneDrive\\Escritorio\\PaginaBrian\\Back\\Proyecto-Braian\\Application\\Models\\Response\\OrderMessageResponse.cs",
               "RelativeDocumentMoniker": "Application\\Models\\Response\\OrderMessageResponse.cs",
@@ -702,7 +822,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 38,
+              "DocumentIndex": 45,
               "Title": "ICategoryService.cs",
               "DocumentMoniker": "C:\\Users\\facus\\OneDrive\\Escritorio\\PaginaBrian\\Back\\Proyecto-Braian\\Application\\Interfaces\\ICategoryService.cs",
               "RelativeDocumentMoniker": "Application\\Interfaces\\ICategoryService.cs",
@@ -714,7 +834,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 43,
+              "DocumentIndex": 50,
               "Title": "20251127211604_ProductCategory.cs",
               "DocumentMoniker": "C:\\Users\\facus\\OneDrive\\Escritorio\\PaginaBrian\\Back\\Proyecto-Braian\\Infrastructure\\Migrations\\20251127211604_ProductCategory.cs",
               "RelativeDocumentMoniker": "Infrastructure\\Migrations\\20251127211604_ProductCategory.cs",
@@ -726,7 +846,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 39,
+              "DocumentIndex": 46,
               "Title": "ServiceCollectionExtensions.cs",
               "DocumentMoniker": "C:\\Users\\facus\\OneDrive\\Escritorio\\PaginaBrian\\Back\\Proyecto-Braian\\Application\\Extensions\\ServiceCollectionExtensions.cs",
               "RelativeDocumentMoniker": "Application\\Extensions\\ServiceCollectionExtensions.cs",
@@ -738,7 +858,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 41,
+              "DocumentIndex": 48,
               "Title": "20251123191111_Update Order Messages.cs",
               "DocumentMoniker": "C:\\Users\\facus\\OneDrive\\Escritorio\\PaginaBrian\\Back\\Proyecto-Braian\\Infrastructure\\Migrations\\20251123191111_Update Order Messages.cs",
               "RelativeDocumentMoniker": "Infrastructure\\Migrations\\20251123191111_Update Order Messages.cs",
@@ -750,7 +870,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 42,
+              "DocumentIndex": 49,
               "Title": "20251123181136_Order Messages.cs",
               "DocumentMoniker": "C:\\Users\\facus\\OneDrive\\Escritorio\\PaginaBrian\\Back\\Proyecto-Braian\\Infrastructure\\Migrations\\20251123181136_Order Messages.cs",
               "RelativeDocumentMoniker": "Infrastructure\\Migrations\\20251123181136_Order Messages.cs",
@@ -762,7 +882,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 40,
+              "DocumentIndex": 47,
               "Title": "OrderMessageRequest.cs",
               "DocumentMoniker": "C:\\Users\\facus\\OneDrive\\Escritorio\\PaginaBrian\\Back\\Proyecto-Braian\\Application\\Models\\Request\\OrderMessageRequest.cs",
               "RelativeDocumentMoniker": "Application\\Models\\Request\\OrderMessageRequest.cs",
