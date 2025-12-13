@@ -239,11 +239,11 @@
             },
             {
               "$type": "Bookmark",
-              "Name": "ST:0:0:{d78612c7-9962-4b83-95d9-268046dad23a}"
+              "Name": "ST:0:0:{34e76e81-ee4a-11d0-ae2e-00a0c90fffc3}"
             },
             {
               "$type": "Bookmark",
-              "Name": "ST:0:0:{34e76e81-ee4a-11d0-ae2e-00a0c90fffc3}"
+              "Name": "ST:0:0:{d78612c7-9962-4b83-95d9-268046dad23a}"
             },
             {
               "$type": "Bookmark",
@@ -272,8 +272,7 @@
               "RelativeToolTip": "Proyecto Braian\\Controllers\\OrderController.cs",
               "ViewState": "AQIAAIcAAAAAAAAAAAAQwJ4AAAAoAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-12-01T21:30:48.706Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-12-01T21:30:48.706Z"
             },
             {
               "$type": "Document",
@@ -285,8 +284,7 @@
               "RelativeToolTip": "Application\\Mappings\\OrderDTO.cs",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-12-12T01:00:15.149Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-12-12T01:00:15.149Z"
             },
             {
               "$type": "Document",
@@ -298,8 +296,7 @@
               "RelativeToolTip": "Application\\Mappings\\DetalleFacturacionDTO.cs",
               "ViewState": "AQIAAA4AAAAAAAAAAAAQwBEAAAApAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-12-12T19:25:16.866Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-12-12T19:25:16.866Z"
             },
             {
               "$type": "Document",
@@ -311,8 +308,7 @@
               "RelativeToolTip": "Application\\Models\\Request\\OrderRequest.cs",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-12-12T19:17:49.298Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-12-12T19:17:49.298Z"
             },
             {
               "$type": "Document",
@@ -324,8 +320,7 @@
               "RelativeToolTip": "Application\\Models\\Request\\DetalleFacturacionRequest.cs",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-12-12T19:21:26.487Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-12-12T19:21:26.487Z"
             },
             {
               "$type": "Document",
@@ -337,8 +332,7 @@
               "RelativeToolTip": "Application\\Models\\Response\\DetalleFacturacionResponse.cs",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAAAoAAAAVAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-12-12T19:23:49.057Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-12-12T19:23:49.057Z"
             },
             {
               "$type": "Document",
@@ -350,8 +344,7 @@
               "RelativeToolTip": "Application\\Interfaces\\IOrderService.cs",
               "ViewState": "AQIAABcAAAAAAAAAAAAIwCoAAAB6AAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-12-01T21:30:33.747Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-12-01T21:30:33.747Z"
             },
             {
               "$type": "Document",
@@ -363,8 +356,7 @@
               "RelativeToolTip": "Infrastructure\\Data\\ProductRepository.cs",
               "ViewState": "AQIAAB4AAAAAAAAAAAAAAD4AAAA7AAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-11-27T21:02:50.346Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-11-27T21:02:50.346Z"
             },
             {
               "$type": "Document",
@@ -376,8 +368,7 @@
               "RelativeToolTip": "Infrastructure\\Data\\OrderRepository.cs",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-12-01T21:29:11.348Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-12-01T21:29:11.348Z"
             },
             {
               "$type": "Document",
@@ -389,8 +380,7 @@
               "RelativeToolTip": "Domain\\Interfaces\\IOrderRepository.cs",
               "ViewState": "AQIAAAMAAAAAAAAAAAAAABoAAAAfAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-12-01T21:30:14.761Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-12-01T21:30:14.761Z"
             },
             {
               "$type": "Document",
@@ -402,8 +392,7 @@
               "RelativeToolTip": "Domain\\Entities\\DetalleFacturacion.cs",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-12-12T19:13:13.734Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-12-12T19:13:13.734Z"
             },
             {
               "$type": "Document",
@@ -415,8 +404,7 @@
               "RelativeToolTip": "Application\\Models\\Response\\OrderResponse.cs",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-12-12T19:35:44.302Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-12-12T19:35:44.302Z"
             },
             {
               "$type": "Document",
@@ -428,8 +416,7 @@
               "RelativeToolTip": "Infrastructure\\Migrations\\20251212200234_Detalle_Facturacion.cs",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-12-12T20:02:35.215Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-12-12T20:02:35.215Z"
             },
             {
               "$type": "Document",
@@ -441,8 +428,7 @@
               "RelativeToolTip": "Application\\Mappings\\OrderMessageDTO.cs",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAAAgAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-11-23T16:40:08.745Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-11-23T16:40:08.745Z"
             },
             {
               "$type": "Document",
@@ -454,8 +440,7 @@
               "RelativeToolTip": "Application\\Mappings\\CategoryDTO.cs",
               "ViewState": "AQIAAAEAAAAAAAAAAAAQwBcAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-11-26T20:32:35.869Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-11-26T20:32:35.869Z"
             },
             {
               "$type": "Document",
@@ -467,8 +452,7 @@
               "RelativeToolTip": "Domain\\Entities\\Order.cs",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAABYAAABCAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-11-23T16:24:44.929Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-11-23T16:24:44.929Z"
             },
             {
               "$type": "Document",
@@ -504,8 +488,7 @@
               "RelativeToolTip": "Infrastructure\\Context\\DataBaseContext.cs",
               "ViewState": "AQIAABcAAAAAAAAAAAA7wEoAAAAQAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-11-23T16:26:48.591Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-11-23T16:26:48.591Z"
             },
             {
               "$type": "Document",
@@ -517,8 +500,7 @@
               "RelativeToolTip": "Infrastructure\\Data\\OrderMessageRepository.cs",
               "ViewState": "AQIAACoAAAAAAAAAAAAowEQAAAANAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-11-23T16:29:57.446Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-11-23T16:29:57.446Z"
             },
             {
               "$type": "Document",

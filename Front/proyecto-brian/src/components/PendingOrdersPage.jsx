@@ -70,13 +70,10 @@ export default function PendingOrdersPage() {
     if (!data.id) return console.warn("No hay ID de detalle para actualizar");
 
     try {
-      // Guardar cambios en backend
       await updateOrderDetalleFacturacion(data.id, data);
 
-      // Traer de nuevo la orden completa
       const updatedOrder = await getOrderById(data.orderId || data.id);
 
-      // Actualizar items
       const items = await Promise.all(
         updatedOrder.orderItems.map(async (item) => {
           const product = await getProductById(item.productId);
@@ -94,25 +91,18 @@ export default function PendingOrdersPage() {
 
       // Actualizar ordersByEstado
       setOrdersByEstado(prev => {
-        const updatedOrders = { ...prev };
-        Object.keys(updatedOrders).forEach(estado => {
-          updatedOrders[estado] = updatedOrders[estado].map(order => {
-            if (order.id === finalOrder.id) return finalOrder;
-            return order;
-          });
+        const newOrders = {};
+        Object.keys(prev).forEach(estado => {
+          newOrders[estado] = [...prev[estado].map(o => o.id === finalOrder.id ? finalOrder : o)];
         });
-        return updatedOrders;
+        return newOrders;
       });
 
-      // Actualizar orderResult si estaba abierta
       if (orderResult && orderResult.id === finalOrder.id) {
         setOrderResult(finalOrder);
       }
 
-      // Actualizar billingDetalle
       setBillingDetalle(finalOrder.detalle_Facturacion);
-
-      // Cerrar modal
       setShowBilling(false);
     } catch (err) {
       console.error("Error actualizando detalle de facturación:", err);
@@ -163,30 +153,66 @@ export default function PendingOrdersPage() {
       if (action === "pay") await pagoOrder(targetOrderId);
       if (action === "finalize") await finalizeOrder(targetOrderId);
 
-      fetchOrdersByEstado(selectedEstado, pageByEstado[selectedEstado] || 1);
+      // Traer la orden actualizada
+      const updatedOrder = await getOrderById(targetOrderId);
+      const items = await Promise.all(
+        updatedOrder.orderItems.map(async (item) => {
+          const product = await getProductById(item.productId);
+          const size = await getProductSizeById(item.productSizeId);
+          return {
+            ...item,
+            product,
+            habilitado: product?.habilitado ?? false,
+            talleHabilitado: size?.habilitado ?? false,
+          };
+        })
+      );
+      const finalOrder = { ...updatedOrder, orderItems: items };
 
-      if (orderResult && orderResult.id === targetOrderId) {
-        const updatedOrder = await getOrderById(targetOrderId);
-        const items = await Promise.all(
-          updatedOrder.orderItems.map(async (item) => {
-            const product = await getProductById(item.productId);
-            const size = await getProductSizeById(item.productSizeId);
-            return {
-              ...item,
-              product,
-              habilitado: product?.habilitado ?? false,
-              talleHabilitado: size?.habilitado ?? false,
-            };
-          })
+      // Actualizar ordersByEstado y totalByEstado
+      setOrdersByEstado(prev => {
+        const newOrders = {};
+
+        Object.keys(prev).forEach(estado => {
+          newOrders[estado] = [...prev[estado].filter(o => o.id !== finalOrder.id)];
+        });
+
+        const estadoKey = finalOrder.estadoPedido;
+        newOrders[estadoKey] = [finalOrder, ...(newOrders[estadoKey] || [])];
+
+        return newOrders;
+      });
+
+      setTotalByEstado(prev => {
+        const newTotals = { ...prev };
+
+        // Estado anterior
+        const prevEstado = Object.keys(prev).find(key =>
+          ordersByEstado[key]?.some(o => o.id === finalOrder.id)
         );
-        setOrderResult({ ...updatedOrder, orderItems: items });
+
+        if (prevEstado !== undefined) {
+          newTotals[prevEstado] = Math.max((newTotals[prevEstado] || 1) - 1, 0);
+        }
+
+        // Estado nuevo
+        const newEstado = finalOrder.estadoPedido;
+        newTotals[newEstado] = (newTotals[newEstado] || 0) + 1;
+
+        return newTotals;
+      });
+
+      if (orderResult && orderResult.id === finalOrder.id) {
+        setOrderResult(finalOrder);
       }
+
+      setBillingDetalle(finalOrder.detalle_Facturacion);
+
     } catch (err) {
       console.error(err);
     }
   };
 
-  // Buscadores
   const buscarProducto = async () => {
     if (!productId) return;
     try {
@@ -239,7 +265,6 @@ export default function PendingOrdersPage() {
     }
   };
 
-  // Recargar órdenes al cambiar filtros
   useEffect(() => {
     Object.keys(estadosMap).forEach(key => {
       fetchOrdersByEstado(Number(key), 1);
